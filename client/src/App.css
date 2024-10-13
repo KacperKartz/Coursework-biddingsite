@@ -1,10 +1,11 @@
 
 html, body,main{
-  background-color: rgb(218, 236, 255);
+  background-color: #FFFF;
   height: 100vh;
   margin: 0;
   padding: 0px;
-  background: fixed linear-gradient(0deg, rgb(121, 140, 168) 0%, rgb(224, 239, 255) 75%) no-repeat;
+  font-family: Poppins;
+  overflow-x: hidden;
 }
 
 
@@ -223,6 +224,37 @@ margin: auto;
 
 .card-text{
   max-width: 250px;
+}
+
+/*------------------------[Component: NavBar]------------------------*/
+
+header{
+  position: absolute;
+}
+
+.navbar-container, .navbar-container > ul, .navbar-container > div{
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-container > ul{
+  font-weight: 700;
+}
+.navbar-container > ul > li > a{
+  color: black;
+}
+
+.navbar-container > form > input{
+  width: 300px;
+}
+
+
+/*------------------------[Component: Welcome Page]------------------------*/
+
+.welcome-page-container{
+  background-color: #FFF2EC;
+  height: 100vh;
+  width: 100vw;
 }
 
 
