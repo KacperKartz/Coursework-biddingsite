@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/AuctoLogoLarge.svg';
 import chevron from '../assets/chevronBlack.svg';
+import chevronActive from '../assets/chevronOrange.svg';
 import login from '../assets/Login.svg';
 import favourites from '../assets/Favourites.svg';
 import basket from '../assets/Basket.svg';
@@ -18,9 +19,9 @@ const Navbar = () => {
             </a>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="#" className='activeLink'>
                         <p>Home</p>
-                        <img src={chevron} rel='chevron' />
+                        <img src={chevronActive} rel='chevron' />
                     </a>
                 </li>
                 <li>

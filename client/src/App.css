@@ -241,7 +241,7 @@ header{
 }
 .navbar-container{
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   width: 100%;
 }
 
@@ -267,7 +267,7 @@ header{
 }
 
 .navbar-container > ul{
-  gap: 20px;
+  gap: 30px;
   font-weight: 700;
   margin: 0;
 }
@@ -277,6 +277,11 @@ header{
   align-items: center;
   color: black;
 }
+
+.navbar-container > ul > li > .activeLink{
+  color: #FF750B;
+}
+
 .navbar-container > ul > li > a > p{
   margin: 0 10px 0 0;
 }
@@ -325,7 +330,27 @@ header{
   width: 100vw;
 }
 
-.welcome-page-container > img{
+.welcome-page-container > div > h5{
+  font-weight: 800;
+}
+
+
+.shopNowButton{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  align-items: center;
+  background-color: #FF750B;
+  border-radius: 3px;
+  padding: 7px 20px;
+  gap: 10px;
+}
+.shopNowButton > p{
+  color: white;
+  margin: 0;
+}
+
+.welcome-page-container > .welcomeImage{
   position: absolute;
   right: 0;
   top: 45px;
