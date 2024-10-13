@@ -1,10 +1,10 @@
-
+import welcomeImage from '../assets/Landing Page.png';
 
 const WelcomePage = () =>{
     return (
         <>
             <div className="welcome-page-container">
-                Welcome page
+                <img src={welcomeImage} rel='Welcome Image' />
             </div>
         </>
     )

@@ -4,10 +4,17 @@ html, body,main{
   height: 100vh;
   margin: 0;
   padding: 0px;
-  font-family: Poppins;
+  font-family: Poppins !important;
   overflow-x: hidden;
 }
 
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
 
 .product-list{
   display: grid;
@@ -214,8 +221,6 @@ margin: auto;
   border-radius: inherit;
 }
 
-.bento-overlay{
-}
 
 .box-text{
   z-index: 2;
@@ -226,30 +231,93 @@ margin: auto;
   max-width: 250px;
 }
 
-/*------------------------[Component: NavBar]------------------------*/
+/*------------------------[ Component: NavBar ]------------------------*/
 
 header{
   position: absolute;
+  width: 100%;
+  top: 20px;
+  z-index: 10;
+}
+.navbar-container{
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
 }
 
-.navbar-container, .navbar-container > ul, .navbar-container > div{
+.navbar-container, .navbar-container > ul, .navbar-container > div, .navbar-container > a{
   display: flex;
   flex-direction: row;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-container > a{
+  gap: 10px;
+}
+.navbar-container > a > h1{
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 800;
+  color: #383838;
+}
+.navbar-container > a > h1:hover{
+  text-decoration: none !important;
 }
 
 .navbar-container > ul{
+  gap: 20px;
   font-weight: 700;
+  margin: 0;
 }
 .navbar-container > ul > li > a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: black;
 }
+.navbar-container > ul > li > a > p{
+  margin: 0 10px 0 0;
+}
 
+.navbar-container > form{
+  display: flex;
+  flex-direction: row;
+}
 .navbar-container > form > input{
   width: 300px;
+  border: none;
+  box-shadow: none;
+}
+.navbar-container > form > button{
+  position: relative;
+  transform: translateX(-10px);
+  background-color: #383838;
+  border: none;
+  border-radius: 5px;
+  width: 70px;
+}
+
+.navbar-container > div > button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  font-weight: 600;
+  gap: 5px;
+}
+.navbar-container > div{
+  display: flex;
+  gap: 10px;
+}
+.navbar-container > div > button > p{
+  margin: 0;
 }
 
 
-/*------------------------[Component: Welcome Page]------------------------*/
+/*------------------------[ Component: Welcome Page ]------------------------*/
 
 .welcome-page-container{
   background-color: #FFF2EC;
@@ -257,6 +325,15 @@ header{
   width: 100vw;
 }
 
+.welcome-page-container > img{
+  position: absolute;
+  right: 0;
+  top: 45px;
+  width: 52vw;
+  z-index: 1;
+}
+
+/*------------------------[ Media Queries ]------------------------*/
 
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
