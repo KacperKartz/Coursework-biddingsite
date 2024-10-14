@@ -343,7 +343,33 @@ header{
 }
 
 .welcome-page-info{
-  padding: 200px 10%;
+  position: relative;
+  padding: 180px 10%;
+}
+
+.vertical-bar{
+  position: absolute;
+  height: 52px;
+  width: 4px;
+  border-radius: 5px;
+  background-color: black; 
+  transform: translateX(-15px) translateY(-5px);
+}
+
+.horizontal-bar1{
+  position: absolute;
+  background-color: #000;
+  border-radius: 5px;
+  height: 3px;
+  width: 39px;
+}
+
+.horizontal-bar2{
+  position: absolute;
+  background-color: #545454;
+  border-radius: 5px;
+  height: 3px;
+  width: 39px;
 }
 
 .shopNowButton{
@@ -366,6 +392,7 @@ header{
 }
 
 .countdownTimer{
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   gap: 10px;
