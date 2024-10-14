@@ -236,7 +236,7 @@ margin: auto;
 header{
   position: absolute;
   width: 100%;
-  top: 20px;
+  padding-top: 20px;
   z-index: 10;
 }
 .navbar-container{
@@ -325,15 +325,26 @@ header{
 /*------------------------[ Component: Welcome Page ]------------------------*/
 
 .welcome-page-container{
-  background-color: #FFF2EC;
+  position: relative;
+  background-color: #ffe7dd;
   height: 100vh;
   width: 100vw;
 }
 
-.welcome-page-container > div > h5{
+.welcome-page-info > h2{
+  letter-spacing: -1px;
+  font-size: 52px;
+  font-weight: 200;
+  line-height: 140%;
+}
+
+.welcome-page-info > h5{
   font-weight: 800;
 }
 
+.welcome-page-info{
+  padding: 200px 10%;
+}
 
 .shopNowButton{
   display: flex;
@@ -350,12 +361,73 @@ header{
   margin: 0;
 }
 
+.dealSub{
+  color: #545454;
+}
+
+.countdownTimer{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.countdownTimer > span{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-weight: 200;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.countdownTimer > span > h6{
+  
+  font-weight: 200;
+  margin: 0;
+}
+
+#timerD{
+  font-size: 115px;
+  width: 110px;
+}
+#timerH{
+  font-size: 64px;
+  width: 60px;
+}
+#timerM{
+  font-size: 45px;
+  width: 40px;
+}
+#timerS{
+  font-size: 35px;
+  width: 30px;
+}
+
+.countdownTimer > span > p{
+  font-size: 23px;
+  margin: 0;
+}
+
+
 .welcome-page-container > .welcomeImage{
   position: absolute;
   right: 0;
   top: 45px;
   width: 52vw;
-  z-index: 1;
+  z-index: 0;
+}
+
+.backToTopButton{
+  position: absolute;
+  right: 50px;
+  bottom: 70px;
+  transition: transform 300ms, box-shadow 300ms;
+}
+
+.backToTopButton:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 5px 0 white;
 }
 
 /*------------------------[ Media Queries ]------------------------*/
