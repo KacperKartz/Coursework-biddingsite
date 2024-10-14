@@ -32,7 +32,7 @@ const Navbar = () => {
                 </li>
                 <li>
                     <a href="#">
-                        <p>Catagories</p>
+                        <p>Categories</p>
                         <img src={chevron} rel='chevron' />
                     </a>
                 </li>

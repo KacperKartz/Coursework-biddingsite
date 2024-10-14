@@ -356,20 +356,17 @@ header{
   transform: translateX(-15px) translateY(-5px);
 }
 
-.horizontal-bar1{
+.horizontal-bar{
   position: absolute;
-  background-color: #000;
   border-radius: 5px;
   height: 3px;
   width: 39px;
 }
-
-.horizontal-bar2{
-  position: absolute;
+.bar-black{
+  background-color: #000;
+}
+.bar-grey{
   background-color: #545454;
-  border-radius: 5px;
-  height: 3px;
-  width: 39px;
 }
 
 .shopNowButton{
@@ -392,7 +389,7 @@ header{
 }
 
 .countdownTimer{
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -455,6 +452,186 @@ header{
 .backToTopButton:hover{
   transform: translateY(-5px);
   box-shadow: 0 5px 0 white;
+}
+
+
+/*------------------------[ Component: Product Categories ]------------------------*/
+
+.productCategories-container{
+  padding: 100px 10%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.productCategories-info{
+  position: relative;
+}
+
+.productCategories-info > h2{
+  font-size: 23px;
+  font-weight: 800;
+  color: #4E4E4E;
+}
+
+.productCategories-info > div{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+.productCategories-info > div > img{
+  transform: translateX(-5px);
+}
+.productCategories-info > div > p{
+  color: #8C8C8C;
+  margin: 0;
+}
+
+.productCategories-info > a > h5{
+  color: black;
+  font-weight: 800;
+}
+
+.productCategories-info > .bar-black{
+  width: 104px;
+  background-color: black;
+}
+
+.bar-orange{
+  margin-top: 5px;
+  background-color: #FF750B;
+}
+
+.productCategories-category{
+  display: flex;
+}
+
+.productCategories-category > div{
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F1F1;
+  height: 251px;
+  width: 251px;
+  border-radius: 5px;
+  margin-left: auto;
+  padding: 20px;
+}
+
+.productCategories-category > div > img{
+  margin: auto;
+  width: 164px;
+}
+.productCategories-category > div > h5{
+  padding-top: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #4E4E4E;
+}
+
+/*------------------------[ Component: Deals Section ]------------------------*/
+
+.deals-section-container{
+  padding: 0 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+}
+
+.office-deal{
+  width: 100%;
+  background-image: url("assets/Office.jpg");
+  background-size: cover;
+  height: 285px;
+  border-radius: 10px;
+}
+.kitchen-deal{
+  background-image: url("assets/Kitchen.jpg");
+  width: 100%;
+  height: 285px;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.office-deal > div, .kitchen-deal > div{
+  display: flex;
+  margin: 40px;
+  height: 216px;
+  outline: 4px solid rgba(255, 255, 255, 0.8);
+}
+.office-deal > div > div, .kitchen-deal > div > div{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.office-deal > div > div > p, .kitchen-deal > div > div > p{
+  margin: auto;
+  color: white;
+  font-weight: 600;
+}
+.office-deal > div > div > h4, .kitchen-deal > div > div > h4{
+  color: white;
+  font-size: 44px;
+}
+.office-deal > div > div > a, .kitchen-deal > div > div > a{
+  margin: auto;
+  background-color: #FF750B;
+  border-radius: 40px;
+  color: white;
+  padding: 8px 20px;
+}
+
+
+/*------------------------[ Component: Product Collection ]------------------------*/
+
+.product-collection-container{
+  position: relative;
+  margin: 100px 10%;
+}
+
+.product-collection-menu{
+ position: relative; 
+}
+
+.product-collection-menu > h2{
+  margin: 0;
+  font-size: 23px;
+  font-weight: 800;
+  color: #4E4E4E;
+}
+
+.product-collection-filter{
+  display: flex;
+}
+
+.product-collection-filter > ul{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 20px;
+}
+.product-collection-filter > ul > li > a{
+  font-size: 12px;
+  color: #828282;
+  font-weight: 600;
+}
+
+.filter-active{
+  text-decoration: underline;
+  color: black !important;
+}
+
+.product-collection-listings{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.product-collection-product-listing{
+  height: 253px;
+  width: 253px;
+  border-radius: 5px;
+  background-color: #F1F1F1;
 }
 
 /*------------------------[ Media Queries ]------------------------*/
