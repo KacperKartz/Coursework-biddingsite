@@ -1,12 +1,20 @@
 
 html, body,main{
-  background-color: rgb(218, 236, 255);
+  background-color: #FFFF;
   height: 100vh;
   margin: 0;
   padding: 0px;
-  background: fixed linear-gradient(0deg, rgb(121, 140, 168) 0%, rgb(224, 239, 255) 75%) no-repeat;
+  font-family: Poppins !important;
+  overflow-x: hidden;
 }
 
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
 
 .product-list{
   display: grid;
@@ -213,8 +221,6 @@ margin: auto;
   border-radius: inherit;
 }
 
-.bento-overlay{
-}
 
 .box-text{
   z-index: 2;
@@ -225,6 +231,207 @@ margin: auto;
   max-width: 250px;
 }
 
+/*------------------------[ Component: NavBar ]------------------------*/
+
+header{
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+  z-index: 10;
+  background-color: #ffe7dd;
+}
+.navbar-container{
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.navbar-container, .navbar-container > ul, .navbar-container > div, .navbar-container > a{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-container > a{
+  gap: 10px;
+}
+.navbar-container > a > h1{
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 800;
+  color: #383838;
+}
+.navbar-container > a > h1:hover{
+  text-decoration: none !important;
+}
+
+.navbar-container > ul{
+  gap: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+.navbar-container > ul > li > a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+}
+
+.navbar-container > ul > li > .activeLink{
+  color: #FF750B;
+}
+
+.navbar-container > ul > li > a > p{
+  margin: 0 10px 0 0;
+}
+
+.navbar-container > form{
+  display: flex;
+  flex-direction: row;
+}
+.navbar-container > form > input{
+  width: 300px;
+  border: none;
+  box-shadow: none;
+}
+.navbar-container > form > button{
+  position: relative;
+  transform: translateX(-10px);
+  background-color: #383838;
+  border: none;
+  border-radius: 5px;
+  width: 70px;
+}
+
+.navbar-container > div > button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  font-weight: 600;
+  gap: 5px;
+}
+.navbar-container > div{
+  display: flex;
+  gap: 10px;
+}
+.navbar-container > div > button > p{
+  margin: 0;
+}
+
+
+/*------------------------[ Component: Welcome Page ]------------------------*/
+
+.welcome-page-container{
+  position: absolute;
+  background-color: #ffe7dd;
+  height: 100vh;
+  width: 100vw;
+}
+
+.welcome-page-info > h2{
+  letter-spacing: -1px;
+  font-size: 52px;
+  font-weight: 200;
+  line-height: 140%;
+}
+
+.welcome-page-info > h5{
+  font-weight: 800;
+}
+
+.welcome-page-info{
+  padding: 200px 10%;
+}
+
+.shopNowButton{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  align-items: center;
+  background-color: #FF750B;
+  border-radius: 3px;
+  padding: 7px 20px;
+  gap: 10px;
+}
+.shopNowButton > p{
+  color: white;
+  margin: 0;
+}
+
+.dealSub{
+  color: #545454;
+}
+
+.countdownTimer{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.countdownTimer > span{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-weight: 200;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.countdownTimer > span > h6{
+  
+  font-weight: 200;
+  margin: 0;
+}
+
+#timerD{
+  font-size: 115px;
+  width: 110px;
+}
+#timerH{
+  font-size: 64px;
+  width: 60px;
+}
+#timerM{
+  font-size: 45px;
+  width: 40px;
+}
+#timerS{
+  font-size: 35px;
+  width: 30px;
+}
+
+.countdownTimer > span > p{
+  font-size: 23px;
+  margin: 0;
+}
+
+
+.welcome-page-container > .welcomeImage{
+  position: absolute;
+  right: 0;
+  top: 45px;
+  width: 52vw;
+  z-index: 0;
+}
+
+.backToTopButton{
+  position: absolute;
+  right: 50px;
+  bottom: 70px;
+  transition: transform 300ms, box-shadow 300ms;
+}
+
+.backToTopButton:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 5px 0 white;
+}
+
+/*------------------------[ Media Queries ]------------------------*/
 
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
