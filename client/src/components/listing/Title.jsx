@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Title = ({ titleProp }) => {
+const Title = ({ titleProp, charLimit = 25 }) => {
+  const truncatedTitle = titleProp.length > charLimit
+  ? `${titleProp.substring(0, charLimit)}...`
+  :titleProp;
+
   return (
-    <h5 className='card-title'>{titleProp}</h5>
+    <h5 className='card-title'>{truncatedTitle}</h5>
   );
 };
 
