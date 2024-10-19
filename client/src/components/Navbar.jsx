@@ -26,7 +26,7 @@ const Navbar = () => {
     dispatch(logoutUser())
     navigate("/")
   }
-z
+
   const loginProp = () => {
     console.log("login")
     navigate("/login")
