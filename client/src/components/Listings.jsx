@@ -30,7 +30,7 @@ const Listings = () => {
   }
 
   return (
-    <div className="product-collection-listings">
+    <div id="product-collection-listings">
       {data.map(product => ( 
         <Listing
           key={product.id}
