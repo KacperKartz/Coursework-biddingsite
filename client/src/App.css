@@ -508,6 +508,13 @@ header{
   border-radius: 5px;
   margin-left: auto;
   padding: 20px;
+  transition: outline 300ms;
+  cursor: pointer;
+  outline: 0px solid #ffffff;
+}
+
+.productCategories-category > div:hover{
+  outline: 4px solid #cbcbcb;
 }
 
 .productCategories-category > div > img{
@@ -577,9 +584,9 @@ header{
 
 /*------------------------[ Component: Product Collection ]------------------------*/
 
-.product-collection-container{
+#product-collection-container{
   position: relative;
-  margin: 100px 10%;
+  padding: 100px 10%;
 }
 
 .product-collection-menu{
@@ -604,10 +611,16 @@ header{
   list-style: none;
   gap: 20px;
 }
-.product-collection-filter > ul > li > a{
+.product-collection-filter > ul > li > button, .product-collection-filter > ul > li{
   font-size: 12px;
   color: #828282;
   font-weight: 600;
+  background-color: #ffffff00;
+  border: none;
+}
+
+.product-collection-filter > ul > li > button:hover{
+  text-decoration: underline;
 }
 
 .filter-active{
@@ -626,6 +639,7 @@ header{
   height: 300px;
   width: 253px;
   border-radius: 5px;
+  transition: outline 200ms ease-in-out;
 }
 
 .image-over img{
@@ -637,6 +651,11 @@ header{
 .image-over{
   outline: 3px solid #F1F1F1;
   border-radius: 5px;
+  transition: outline 200ms ease-in-out;
+}
+
+.product-collection-product-listing:hover .image-over{
+  outline: 4px solid #cbcbcb;
 }
 
 .card-img-top{

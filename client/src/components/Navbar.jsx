@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <header> 
         <div className='navbar-container'>
-            <a href="/">
+            <a href="/" style={{ textDecoration: 'none' }}>
                 <img src={ logo } rel='AuctoLogo'/>
                 <h1>Aucto</h1>
             </a>

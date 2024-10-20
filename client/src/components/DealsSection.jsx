@@ -10,7 +10,7 @@ const DealsSection = () => {
                         <div>
                             <p>20% off order</p>
                             <h4>Office</h4>
-                            <a className="shop-now-button" href="#product-collection-listings">Shop now</a>
+                            <a className="shop-now-button" href="#product-collection-container">Shop now</a>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@ const DealsSection = () => {
                         <div>
                             <p>20% off order</p>
                             <h4>Kitchen</h4>
-                            <a className="shop-now-button" href="#product-collection-listings">Shop now</a>
+                            <a className="shop-now-button" href="#product-collection-container">Shop now</a>
                         </div>
                     </div>
                 </div>
