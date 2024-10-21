@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import RatingMui from '@mui/material/Rating';
 
 const ProductPage = () => {
   const { productId } = useParams(); // Retrieve the product ID from the URL
@@ -34,8 +35,9 @@ const ProductPage = () => {
           <h1>{product.title}</h1>
           <img src={product.image} alt={product.title} />
           <p>{product.description}</p>
-          <p>Price: ${product.price}</p>
-          <p>Rating: {product.rating.rate}</p>
+          <p>£{product.price}</p>
+          <RatingMui name="read-only" value={product.rating.rate} readOnly />
+          <p>( {product.rating.rate} / 5 )</p>
         </>
       ) : (
         <p>Product not found.</p>
