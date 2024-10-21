@@ -50,7 +50,7 @@ const Listings = ({ filterType }) => {
   return (
     <div id="product-collection-listings">
       {filteredProducts.map(product => (
-        <Link key={product.id} to={`/product/${product.id}`}>
+        <Link key={product.id} to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>
           <Listing
             title={product.title}
             description={product.description}
