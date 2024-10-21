@@ -25,13 +25,13 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="#product-collection-container">
+                    <a href="/shop">
                         <p>Shop</p>
                         <img src={chevron} rel='chevron' />
                     </a>
                 </li>
                 <li>
-                    <a href="#productCategories-container">
+                    <a href="/#productCategories-container">
                         <p>Categories</p>
                         <img src={chevron} rel='chevron' />
                     </a>

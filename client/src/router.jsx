@@ -5,7 +5,8 @@ import {
     LoginPage,
     ErrorPage,
     RegisterPage,
-    ProductPage
+    ProductPage,
+    ShopPage
 } from "./pages/index"
 import Layout from "./layout";
 
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
             {
                 path:"/product/:productId",
                 element:<ProductPage />,
+            },
+            {
+                path:"/shop",
+                element:<ShopPage />,
             }
         ]
     }

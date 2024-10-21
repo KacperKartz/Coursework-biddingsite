@@ -703,9 +703,18 @@ footer{
   min-height: 100vh;
 }
 
-.product-page-container > img{
-  place-self: center;
+.product-page-img-div{
+  margin: 0 40px;
+  border-radius: 5px;
+  outline: 3px solid #F1F1F1;
+  display: flex;
+  padding: 30px;
+}
+
+.product-page-container > div > img{
+  margin: auto;
   max-height: 300px;
+  max-width: 100%;
 }
 
 .product-page-container > div > h1{
