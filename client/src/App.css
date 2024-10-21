@@ -439,6 +439,9 @@ header{
   bottom: 70px;
   transition: transform 300ms, box-shadow 300ms;
   z-index: 100;
+  background-color: #00000000;
+  border: 0;
+  padding: 0;
 }
 
 .backToTopButton:hover{
