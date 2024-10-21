@@ -1,11 +1,16 @@
 import React from 'react';
 import Navbar from './components/navbar';
+import FooterMenu from './components/FooterMenu';
 
 const Layout = ({ children }) => {
   return (
     <div>
-      <Navbar />
-      <main>{children}</main>
+      <main>
+        <Navbar />
+        {children}
+        <FooterMenu />
+      </main>
+      
     </div>
   );
 };
