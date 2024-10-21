@@ -14,7 +14,7 @@ const Listing = ({ title, description, price, image, category, rating }) => {
   }
 
   return (
-    <div className="listing-items card">
+    <div className=".product-collection-product-listing">
       <div className='image-over'>
       <Image imageProp={image} className="card-img-top"></Image>
       </div>
