@@ -717,7 +717,7 @@ footer{
 }
 
 .product-page-container > div > span > button{
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 /*------------------------[ Media Queries ]------------------------*/
