@@ -4,7 +4,8 @@ import {
     LandingPage,
     LoginPage,
     ErrorPage,
-    RegisterPage
+    RegisterPage,
+    ProductPage
 } from "./pages/index"
 import Layout from "./layout";
 
@@ -16,21 +17,25 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
-        errorElement: <ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage />,
         children:[
             {
                 index:true,
-                element:<LandingPage></LandingPage>,
+                element:<LandingPage />,
             },
             {
                 path:"/login",
-                element:<LoginPage></LoginPage>,
+                element:<LoginPage />,
                 action: loginAction(store)
             },
             {
                 path:"/register",
-                element:<RegisterPage></RegisterPage>,
+                element:<RegisterPage />,
                 action: registerAction
+            },
+            {
+                path:"/product/:productId",
+                element:<ProductPage />,
             }
         ]
     }

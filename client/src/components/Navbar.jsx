@@ -19,19 +19,19 @@ const Navbar = () => {
             </a>
             <ul>
                 <li>
-                    <a href="#" className='activeLink'>
+                    <a href="/" className='activeLink'>
                         <p>Home</p>
                         <img src={chevronActive} rel='chevron' />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#product-collection-container">
                         <p>Shop</p>
                         <img src={chevron} rel='chevron' />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#productCategories-container">
                         <p>Categories</p>
                         <img src={chevron} rel='chevron' />
                     </a>

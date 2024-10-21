@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Listing from './listing/Listing'; // Ensure this component exists
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Listings = ({ filterType }) => {  
   const [data, setData] = useState([]);
@@ -49,15 +50,16 @@ const Listings = ({ filterType }) => {
   return (
     <div id="product-collection-listings">
       {filteredProducts.map(product => (
-        <Listing
-          key={product.id}
-          title={product.title}
-          description={product.description}
-          price={product.price}
-          image={product.image}
-          category={product.category}
-          rating={product.rating.rate} 
-        />
+        <Link key={product.id} to={`/product/${product.id}`}>
+          <Listing
+            title={product.title}
+            description={product.description}
+            price={product.price}
+            image={product.image}
+            category={product.category}
+            rating={product.rating.rate} 
+          />
+        </Link>
       ))}
     </div>
   );

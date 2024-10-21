@@ -186,7 +186,6 @@ a:hover{
 
 
 .box > .box-content {
-
   border-radius: inherit;
   height: calc(100%);
   width: calc(100%);
@@ -198,7 +197,6 @@ a:hover{
 
 
 .card-img-top{
-  
   max-width: 200px;
   margin: auto;  
   transition: 300ms ease-in-out;
@@ -440,6 +438,7 @@ header{
   right: 50px;
   bottom: 70px;
   transition: transform 300ms, box-shadow 300ms;
+  z-index: 100;
 }
 
 .backToTopButton:hover{
@@ -450,7 +449,7 @@ header{
 
 /*------------------------[ Component: Product Categories ]------------------------*/
 
-.productCategories-container{
+#productCategories-container{
   padding: 100px 10%;
   display: grid;
   grid-template-columns: repeat(4, 25%);
