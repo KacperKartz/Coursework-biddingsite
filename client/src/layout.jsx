@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/navbar';
+import { Outlet } from 'react-router-dom';
 import FooterMenu from './components/FooterMenu';
 
 const Layout = ({ children }) => {
@@ -7,7 +8,7 @@ const Layout = ({ children }) => {
     <div>
       <main>
         <Navbar />
-        {children}
+        <Outlet />
         <FooterMenu />
       </main>
       
@@ -16,3 +17,4 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
