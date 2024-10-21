@@ -14,11 +14,10 @@ const UserContainer = ({user, login, logout}) => {
             </li>
         ) : (
             <li>
-                {" Please "}
                 <button onClick={login} className='btn'>
-                    login
+                    
                 </button>
-                <Link to={"/register"}>or register?</Link>
+                <Link to={"/register"}>Register</Link>
             </li>
         )}
     </ul>

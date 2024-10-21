@@ -26,7 +26,7 @@ const Navbar = () => {
     dispatch(logoutUser())
     navigate("/")
   }
-z
+
   const loginProp = () => {
     console.log("login")
     navigate("/login")
@@ -72,10 +72,19 @@ z
                 </button>
             </form>
             <div>
+
+                    {user? (
+                        <div>Hi {user.username}
+                            <button onClick={logout}>Logout</button>
+                        </div>
+                    ):
+                    (        
                 <button type="button" onClick={navigateLogin}>
-                    <img src={ login } rel='login'/>
-                    <p>Login</p>
-                </button>
+                        <img src={ login } rel='login'/>
+                        <p>Login</p>
+                                
+                    </button>
+                    )}
                 <a href="#">
                     <img src={ favourites } rel='chevron' />
                 </a>
@@ -83,7 +92,6 @@ z
                     <img src={ basket } rel='chevron' />
                 </a>
             </div>
-            <UserContainer user={user} logout={logout} login={loginProp}></UserContainer>
         </div>
     </header>
   );

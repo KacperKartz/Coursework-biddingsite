@@ -30,7 +30,7 @@ export const action = async ({ request }) => {
 
 const RegisterPage = () => {
   return (
-    <div className='welcome-page-container'>
+    <div className='login-page-container'>
       <RegisterForm />
     </div>
   );

@@ -4,7 +4,8 @@ import {
     LandingPage,
     LoginPage,
     ErrorPage,
-    RegisterPage
+    RegisterPage,
+    WStest
 } from "./pages/index"
 import Layout from "./layout";
 
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
                 path:"/register",
                 element:<RegisterPage></RegisterPage>,
                 action: registerAction
+            },
+            {
+                path:"/test",
+                element:<WStest></WStest>,
             }
         ]
     }

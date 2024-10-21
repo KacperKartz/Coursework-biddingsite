@@ -31,7 +31,7 @@ export const action = (store) =>
 
 const LoginPage = () => {
   return (
-    <div className='welcome-page-container'>
+    <div className='login-page-container'>
         <LoginForm></LoginForm>
   
     </div>

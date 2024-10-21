@@ -10,7 +10,7 @@ import SubmitButton from './SubmitButton';
 const RegisterForm = () => {
   return (
     <div className='login-form'>
-      <h4>Please Login</h4>
+      <h4>Please Register</h4>
       <Form method='POST'>
         <label>Username</label>
         <FormInput 
