@@ -49,6 +49,7 @@ const ProductPage = () => {
               <input placeholder='Enter bid amount'></input>
               <button>Place bid</button>
             </span>
+            <button>Buy now</button>
           </div>
         </>
       ) : (
