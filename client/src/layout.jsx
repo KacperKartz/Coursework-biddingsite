@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/navbar';
 import { Outlet } from 'react-router-dom';
 import FooterMenu from './components/FooterMenu';
+import BackToTopButton from './components/BackToTopButton';
 
 const Layout = ({ children }) => {
   return (
@@ -9,6 +10,7 @@ const Layout = ({ children }) => {
       <main>
         <Navbar />
         <Outlet />
+        <BackToTopButton />
         <FooterMenu />
       </main>
       

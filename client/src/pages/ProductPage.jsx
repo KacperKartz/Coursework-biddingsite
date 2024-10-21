@@ -25,19 +25,31 @@ const ProductPage = () => {
     fetchProduct();
   }, [productId]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (loading) return <div className="product-page-container">Loading...</div>;
+  if (error) return <div className="product-page-container">Error: {error.message}</div>;
 
   return (
-    <div>
+    <div className="product-page-container">
       {product ? (
         <>
-          <h1>{product.title}</h1>
           <img src={product.image} alt={product.title} />
-          <p>{product.description}</p>
-          <p>£{product.price}</p>
-          <RatingMui name="read-only" value={product.rating.rate} readOnly />
-          <p>( {product.rating.rate} / 5 )</p>
+          <div>
+            <h1>{product.title}</h1>
+            <hr />
+            <div className="star-rating">
+              <RatingMui name="read-only" value={product.rating.rate} readOnly />
+              <p>( {product.rating.rate} / 5 )</p>
+            </div>
+            <h3>£{product.price}</h3>
+            <hr />
+            <br />
+            <p>{product.description}</p>
+            <br /><br />
+            <span>
+              <input placeholder='Enter bid amount'></input>
+              <button>Place bid</button>
+            </span>
+          </div>
         </>
       ) : (
         <p>Product not found.</p>
