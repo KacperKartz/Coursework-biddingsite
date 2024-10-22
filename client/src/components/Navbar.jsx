@@ -35,7 +35,7 @@ const Navbar = () => {
     return (
     <header> 
         <div className='navbar-container'>
-            <a href="/">
+            <a href="/" style={{ textDecoration: 'none' }}>
                 <img src={ logo } rel='AuctoLogo'/>
                 <h1>Aucto</h1>
             </a>
@@ -47,13 +47,13 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#product-collection-container">
                         <p>Shop</p>
                         <img src={chevron} rel='chevron' />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#productCategories-container">
                         <p>Catagories</p>
                         <img src={chevron} rel='chevron' />
                     </a>

@@ -19,7 +19,7 @@ const WelcomePage = () =>{
                     <br />
                     <h2>10% off in<br/>November</h2>
                     <br />
-                    <a className='shopNowButton' href='#'>
+                    <a style={{ textDecoration: 'none' }} className='shopNowButton' href='#'>
                         <p>Shop now</p>
                         <img src={ arrow } rel='arrow'/>
                     </a>

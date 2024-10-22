@@ -10,7 +10,7 @@ const ProductCategories = () => {
 
     return (
         <>
-            <div className="productCategories-container">
+            <div id="productCategories-container">
                 <div className="productCategories-info">
                     <h2>Shop<br />by Categories</h2>
                     <div className="horizontal-bar bar-orange"></div>
@@ -20,7 +20,7 @@ const ProductCategories = () => {
                         <p>200+<br />Unique deals</p>
                     </div>
                     <br /><br />
-                    <a href="#">
+                    <a href="#" style={{ textDecoration: 'none' }}>
                         <h5>ALL CATEGORIES</h5>
                     </a>
                     <div className="horizontal-bar bar-black"></div>

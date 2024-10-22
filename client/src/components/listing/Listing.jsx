@@ -14,22 +14,22 @@ const Listing = ({ title, description, price, image, category, rating }) => {
   }
 
   return (
-    <div className=".product-collection-product-listing">
+    <div className="product-collection-product-listing">
       <div className='image-over'>
-      <Image imageProp={image} className="card-img-top"></Image>
+        <Image imageProp={image} className="card-img-top"></Image>
       </div>
+
       <div className='overlay-text'>
-
-      <Rating ratingProp={rating} />
-      <Title titleProp={title} />
-      <Price priceProp={price} />
-
+        <Rating ratingProp={rating} />
+        <Title titleProp={title} />
+        <Price priceProp={price} />
       </div>
-      <div className='listing-desc'>
-      <Category categoryProp={category} />
+
+      {/* <div className='listing-desc'>
+        <Category categoryProp={category} />
         <Description descriptionProp={description} />
         <Button></Button>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,8 +1,13 @@
 import React from 'react';
+import RatingMui from '@mui/material/Rating';
 
 const Rating = ({ ratingProp }) => {
+
   return (
-    <p className='fw-bold text-dark'>Rating: {ratingProp} / 5</p>
+    <div className="star-rating">
+      <RatingMui name="read-only" value={ratingProp} readOnly />
+      <p>( {ratingProp} / 5 )</p>
+    </div>
   );
 };
 
