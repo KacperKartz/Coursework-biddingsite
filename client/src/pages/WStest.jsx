@@ -58,7 +58,7 @@ function WebSocketComponent() {
         placeholder="Enter your bid"
         disabled={!user} // Disable if user is not available
       />
-      <button onClick={placeBid} disabled={!user}>Place Bid</button>
+      <button onClick={placeBid}>Place Bid</button>
     </div>
   );
 }
