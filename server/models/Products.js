@@ -15,6 +15,9 @@ const Products = {
     );
   
     return result.rows[0];
+  },
+  async getProductById(productId) {
+    return await client.query('SELECT * FROM products WHERE id = $1', [productId]);
   }
   
 };

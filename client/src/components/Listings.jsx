@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import Listing from './listing/Listing'; // Ensure this component exists
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { data } from '../../../../../Web design/MockData'
+
 
 const Listings = ({ filterType }) => {  
-  // const [data, setData] = useState([]);
-  // const [loading, setLoading] = useState(true); // Add loading state
-  // const [error, setError] = useState(null); // Optional: add error state
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+  const [error, setError] = useState(null); // Optional: add error state
 
   // Fetch data from API
   useEffect(() => {
@@ -24,14 +24,14 @@ const Listings = ({ filterType }) => {
       });
   }, []);
 
-  // if (loading) {
-  //   return <div>Loading Items...</div>; 
-  // }
+  if (loading) {
+    return <div>Loading Items...</div>; 
+  }
 
 
-  // if (error) {
-  //   return <div>Error fetching data: {error.message}</div>; 
-  // }
+  if (error) {
+    return <div>Error fetching data: {error.message}</div>; 
+  }
 
   // Filter and sort the products based on the selected filterType
   const filteredProducts = [...data].sort((a, b) => { // Spread to create a copy before sorting

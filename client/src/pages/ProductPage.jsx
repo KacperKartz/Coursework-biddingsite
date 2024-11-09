@@ -41,7 +41,7 @@ const ProductPage = () => {
             <hr />
             <div className="star-rating">
               <RatingMui name="read-only" value={product.rating_rate} readOnly />
-              <p>( {product.rating.rate} / 5 )</p>
+              <p>( {product.rating_rate} / 5 )</p>
             </div>
             <h3>£{product.price}</h3>
             <hr />
