@@ -227,13 +227,17 @@ a:hover{
 header{
   position: absolute;
   width: 100%;
-  padding-top: 20px;
   z-index: 10;
 }
 .navbar-container{
   justify-content: center;
   gap: 30px;
   width: 100%;
+}
+
+.hamburger-navbar{
+  margin-top: 20px;
+  display: none;
 }
 
 .navbar-container, .navbar-container > ul, .navbar-container > div, .navbar-container > a{
@@ -748,34 +752,166 @@ footer{
 
 /*------------------------[ Media Queries ]------------------------*/
 
-@media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-      max-width: 960px;
-  }
-  
-}
+/* Portrait IPhone*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    
+    /*------------------------[ Media: NavBar ]------------------------*/
+    .hamburger-navbar{
+      display: inline-block;
+      cursor: pointer;    
+      position: absolute;
+      left: 25px;
+    }
 
-@media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-      max-width: 720px;
-  }
+    .hamburger-navbar > div {
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
+    }
+    .bar1, .bar2, .bar3{
+      transition: 300ms;
+    }
 
+    /* Rotate first bar */
+    .open .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
 
-}
+    /* Fade out the second bar */
+    .open .bar2 {opacity: 0;}
 
-  @media (min-width: 576px) {
-    .container-sm, .container {
-        max-width: 540px;
+    /* Rotate last bar */
+    .open .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+
+    .navbar-container{
+      display: inline-block;
+      overflow: hidden;
+      background-color: white;
+      transition: max-height 300ms;
+      max-height: 0
+    }
+    .navbar-container.open{
+      max-height: 500px;
+    }
+
+    .navbar-container > a:nth-child(1){
+      display: none;
+    }
+    .navbar-container > ul{
+      position: relative;
+      margin: 50px 0;
+      padding-left: 0;
+      top: 20px;
+      flex-direction: column;
+    }
+    .navbar-container > form{
+      position: absolute;
+      right: 20px;
+      width: 40%;
+      top: 20px;
+    }
+    .navbar-container > form > input {
+      width: 100%
+    }
+
+    .navbar-container > div{
+      padding: 20px 0;
+      width: fit-content;
+      margin: auto;
+    }
+    /*------------------------[ Media: Welcome Page ]------------------------*/
+
+    .countdownTimer{
+      margin-top: 50px;
+    }
+    #timerD{
+      font-size: 50px;
+      width: 40px;
+    }
+    #timerH{
+      font-size: 40px;
+      width: 35px;
+    }
+    #timerM{
+      font-size: 30px;
+      width: 25px;
+    }
+    #timerS{
+      font-size: 30px;
+      width: 20px;
+    }
+    .countdownTimer > span > p{
+      font-size: 15px;
+      margin: 0;
+    }
+    
+    .backToTopButton{
+      right: 50px;
+      bottom: 20px;
+    }
+
+    /*------------------------[ Media: Product Categories ]------------------------*/
+
+    #productCategories-container{
+      padding: 50px 10%;
+      display: grid;
+      grid-template-columns: 100%;
+    }
+    #productCategories-container > div:nth-child(2),
+    #productCategories-container > div:nth-child(3), 
+    #productCategories-container > div:nth-child(4){
+      display: none;
+    }
+
+    /*------------------------[ Media: Product Deals ]------------------------*/
+
+    .deals-section-container{
+      padding: 0 10%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 50px;
+    }
+    .deals-section-container > div:nth-child(2){
+      display: none;
+    }
+
+    /*------------------------[ Media: Product Collection ]------------------------*/
+
+    #product-collection-listings{
+      display: grid;
+      grid-template-columns: 100%;
+      place-items: center;
+    }
+
+    .product-collection-filter{
+      display: inline;
+    }
+
+    .product-collection-filter > ul{
+      margin-top: 40px;
+      display: inline-block;
+      padding: 0;
+    }
+    .product-collection-filter > ul > li:nth-child(2),
+    .product-collection-filter > ul > li:nth-child(4),
+    .product-collection-filter > ul > li:nth-child(6){
+      display: none;
     }
 }
 
-@media (max-width: 500px) {
-  .product-list{
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Landscape Iphone*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
 
-  .card-text{
-    display: none;
-  }
-  
+
 }
