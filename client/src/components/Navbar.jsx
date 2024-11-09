@@ -10,9 +10,16 @@ import search from '../assets/Search.svg';
 import UserContainer from './UserContainer';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../store/appUserSlice';
+import { useState } from 'react';
+
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+      setIsOpen(!isOpen);  // Toggle between true/false
+    };
 
   const user = useSelector((state) =>state.appUser.user)
   const location = useLocation
@@ -34,6 +41,11 @@ const Navbar = () => {
 
     return (
     <header> 
+        <div className={`hamburger-navbar ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
+        </div>
         <div className='navbar-container'>
             <a href="/" style={{ textDecoration: 'none' }}>
                 <img src={ logo } rel='AuctoLogo'/>
@@ -60,7 +72,7 @@ const Navbar = () => {
                 </li>
                 <li>
                     <a href="#">
-                        <p>About</p>
+                        <p>FAQ</p>
                         <img src={chevron} rel='chevron' />
                     </a>
                 </li>
