@@ -882,13 +882,17 @@ footer{
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       column-gap: 50px;
+      row-gap: 30px;
     }
-    .deals-section-container > div:nth-child(2){
+    /* .deals-section-container > div:nth-child(2){
       display: none;
-    }
+    } */
 
     /*------------------------[ Media: Product Collection ]------------------------*/
 
+    #product-collection-container{
+      padding: 60px 10%;
+    }
     #product-collection-listings{
       display: grid;
       grid-template-columns: 100%;
@@ -908,6 +912,10 @@ footer{
     .product-collection-filter > ul > li:nth-child(4),
     .product-collection-filter > ul > li:nth-child(6){
       display: none;
+    }
+
+    .product-collection-product-listing{
+      margin-top: 50px;
     }
 
     /*------------------------[ Media: Product Page ]------------------------*/
