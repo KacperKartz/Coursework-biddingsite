@@ -233,6 +233,7 @@ header{
   justify-content: center;
   gap: 30px;
   width: 100%;
+  padding-top: 15px;
 }
 
 .hamburger-navbar{
@@ -795,7 +796,8 @@ footer{
       overflow: hidden;
       background-color: white;
       transition: max-height 300ms;
-      max-height: 0
+      max-height: 0;
+      padding-top: 0;
     }
     .navbar-container.open{
       max-height: 500px;
