@@ -2,7 +2,7 @@ import welcomeImage from '../assets/Landing Page.png';
 import arrow from '../assets/Arrow.svg';
 import CountdownTimer from './CountdownTimer';
 
-const targetDate = '2024-11-03T00:00:00';
+const targetDate = '2024-11-12T15:00:00';
 
 const WelcomePage = () =>{
     return (

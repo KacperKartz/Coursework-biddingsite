@@ -14,7 +14,7 @@ const ProductPage = () => {
     // Fetch product details based on productId
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://fakestoreapi.com/products/${productId}`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND_API}/api/products/${productId}`);
         setProduct(response.data);
       } catch (error) {
         setError(error);
@@ -40,7 +40,7 @@ const ProductPage = () => {
             <h1>{product.title}</h1>
             <hr />
             <div className="star-rating">
-              <RatingMui name="read-only" value={product.rating.rate} readOnly />
+              <RatingMui name="read-only" value={product.rating_rate} readOnly />
               <p>( {product.rating.rate} / 5 )</p>
             </div>
             <h3>£{product.price}</h3>

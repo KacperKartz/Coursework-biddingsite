@@ -7,7 +7,8 @@ import {
     RegisterPage,
     ProductPage,
     WStest,
-    addProductPage
+    addProductPage,
+    ShopPage
 } from "./pages/index"
 import Layout from "./layout";
 
@@ -39,15 +40,7 @@ export const router = createBrowserRouter([
             {
                 path:"/product/:productId",
                 element:<ProductPage />,
-            },           
-            {
-                path:"/test",
-                element:<WStest></WStest>,
-            },
-            {
-                path:"/add-product",
-                element:<AddProductPage></AddProductPage>,
-            },
+            }
         ]
     }
 ])

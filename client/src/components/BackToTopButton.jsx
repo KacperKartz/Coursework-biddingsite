@@ -1,13 +1,20 @@
-import chevronUp from '../assets/ChevronUp.svg'
+import chevronUp from '../assets/ChevronUp.svg';
 
 const BackToTopButton = () => {
+    const scrollToTop = () => {
+        const mainContainer = document.querySelector('main');
+
+        mainContainer.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
-        <>
-            <a href='#landingPage'>
-                <img className='backToTopButton' src={ chevronUp }/>
-            </a>
-        </>
-    )
+        <button className='backToTopButton' onClick={scrollToTop}>
+            <img src={chevronUp} alt="Back to top" />
+        </button>
+    );
 };
 
 export default BackToTopButton;

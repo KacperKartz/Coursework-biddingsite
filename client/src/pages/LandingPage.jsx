@@ -3,7 +3,6 @@ import BentoBox from '../components/BentoBox'
 import Listing from '../components/listing/Listing'
 import Listings from '../components/Listings'
 import WelcomePage from '../components/welcome-page'
-import BackToTopButton from '../components/BackToTopButton'
 import ProductCategories from '../components/ProductCategories'
 import DealsSection from '../components/DealsSection'
 import ProductCollection from '../components/ProductCollection'
@@ -14,7 +13,6 @@ const LandingPage = () => {
         {/* <BentoBox></BentoBox> */}
         {/* <Listings></Listings> */}
         <WelcomePage />
-        <BackToTopButton />
         <ProductCategories />
         <DealsSection />
         <ProductCollection />
