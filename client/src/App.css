@@ -305,10 +305,9 @@ ADDING PRODUCT FORM
 /*------------------------[ Component: NavBar ]------------------------*/
 
 header{
-  position: relative;
+  position: absolute;
   width: 100%;
   z-index: 10;
-  background-color: #ffe7dd;
 }
 .navbar-container{
   justify-content: center;
@@ -432,6 +431,10 @@ header{
   padding: 180px 10%;
 }
 
+.welcome-page-info > p{
+  margin: 0;
+}
+
 .vertical-bar{
   position: absolute;
   height: 52px;
@@ -474,7 +477,7 @@ header{
 }
 
 .countdownTimer{
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -491,7 +494,6 @@ header{
 }
 
 .countdownTimer > span > h6{
-  
   font-weight: 200;
   margin: 0;
 }
