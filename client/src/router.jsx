@@ -6,13 +6,15 @@ import {
     ErrorPage,
     RegisterPage,
     ProductPage,
-    WStest
+    WStest,
+    addProductPage
 } from "./pages/index"
 import Layout from "./layout";
 
 import {action as registerAction} from "./pages/RegisterPage";
 import {action as loginAction} from "./pages/LoginPage"
 import { store } from "./store/store";
+import AddProductPage from "./pages/AddProductPage";
 
 export const router = createBrowserRouter([
     {
@@ -41,7 +43,11 @@ export const router = createBrowserRouter([
             {
                 path:"/test",
                 element:<WStest></WStest>,
-            }
+            },
+            {
+                path:"/add-product",
+                element:<AddProductPage></AddProductPage>,
+            },
         ]
     }
 ])

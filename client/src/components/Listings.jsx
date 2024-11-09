@@ -11,7 +11,7 @@ const Listings = ({ filterType }) => {
 
   // Fetch data from API
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/products')
+    axios.get(`${import.meta.env.VITE_APP_BACKEND_API}/api/products`)
       .then(response => {
         setData(response.data); 
         setLoading(false); 
@@ -43,7 +43,7 @@ const Listings = ({ filterType }) => {
         // return b.discount - a.discount; 
       case "TOP RATED":
       default:
-        return b.rating.rate - a.rating.rate; // Sort by rating descending
+        return b.rating_rate - a.rating_rate; // Sort by rating descending
     }
   });
 
@@ -57,7 +57,7 @@ const Listings = ({ filterType }) => {
             price={product.price}
             image={product.image}
             category={product.category}
-            rating={product.rating.rate} 
+            rating={product.rating_rate} 
           />
         </Link>
       ))}

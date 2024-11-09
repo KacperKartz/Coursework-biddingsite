@@ -1,30 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-function WebSocketComponent() {
+function WebSocketComponent({ productID }) {
   const [auctionState, setAuctionState] = useState({ highestBid: 0, highestBidder: null });
   const [newBid, setNewBid] = useState('');
+  const socketRef = useRef(null);
 
   // Get user details from Redux store
   const user = useSelector((state) => state.appUser.user);
 
   useEffect(() => {
-    const socket = new WebSocket('ws://localhost:3000');
+    console.log("Opening WebSocket connection for productID:", productID);
+    // Open WebSocket connection for the given product
+    socketRef.current = new WebSocket(`ws://localhost:3000/?productID=${productID}`);
 
-    socket.onmessage = (event) => {
+    socketRef.current.onopen = () => {
+      console.log("WebSocket connection opened for product:", productID);
+    };
+
+    socketRef.current.onmessage = (event) => {
       const updatedAuctionState = JSON.parse(event.data);
-
-      // Ensure the highestBidder is properly set from the server
+      console.log("auciton Update:", updatedAuctionState)
       setAuctionState({
         highestBid: updatedAuctionState.highestBid,
         highestBidder: updatedAuctionState.highestBidder || 'Anonymous',
       });
     };
 
-    return () => {
-      socket.close();
+    socketRef.current.onclose = () => {
+      console.log("WebSocket connection closed");
     };
-  }, []);
+
+    socketRef.current.onerror = (error) => {
+      console.error("WebSocket error:", error);
+    };
+
+    // Clean up WebSocket connection when component unmounts
+    return () => {
+      if (socketRef.current) {
+        socketRef.current.close();
+      }
+    };
+  }, [productID]); // Reconnect if the productID changes
 
   const placeBid = () => {
     if (!user || !user.username) {
@@ -32,22 +49,26 @@ function WebSocketComponent() {
       return;
     }
 
-    const socket = new WebSocket('ws://localhost:3000');
+    if(auctionState.highestBidder == user.username){
+      return;
+    }
 
-    const bidData = {
-      bid: Number(newBid),
-      bidder: user.username, // Send the username when placing a bid
-    };
+    if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
+      const bidData = {
+        bid: Number(newBid),
+        bidder: user.username, // Send the username when placing a bid
+      };
 
-    socket.onopen = () => {
-      socket.send(JSON.stringify(bidData));
-      socket.close();
-    };
+      socketRef.current.send(JSON.stringify(bidData)); // Send bid without closing connection
+      console.log('Bid placed:', bidData);
+    } else {
+      console.log('WebSocket is not open');
+    }
   };
 
   return (
     <div>
-      <h2>Live Auction</h2>
+      <h2>Live Auction {productID}</h2>
       <p>Current highest bid: ${auctionState.highestBid}</p>
       <p>Highest bidder: {auctionState.highestBidder}</p>
 

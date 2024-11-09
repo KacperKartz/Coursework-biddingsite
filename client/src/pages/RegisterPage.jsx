@@ -7,15 +7,25 @@ import { redirect } from 'react-router-dom';
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
+  // const { username, email } = data.user;
 
   try {
-    console.log(data);
+    console.log(data);  
+    console.log(data.username);
     const response = await axios.post(REGISTERURL, data, {
-
+      
       headers: {
         "Content-Type": "multipart/form-data",
       },
     });
+
+    
+    await axios.post(`${import.meta.env.VITE_APP_BACKEND_API}/api/add-user`, {
+      username: data.username,
+      email: data.email,
+    });
+    
+
     console.log(response.data);
     return redirect("/login");
   } catch (error) {
@@ -25,6 +35,7 @@ export const action = async ({ request }) => {
     console.log(errorMessage);
     return null;
   }
+  
 };
 
 

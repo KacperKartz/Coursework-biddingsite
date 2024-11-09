@@ -1,15 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const SubmitButton = ({ text }) => {
-  const navigation = useNavigate();
-  const isSubmitting = navigation.state === "submitting";
-
+const SubmitButton = ({ text, isSubmitting }) => {
   return (
-    <button
-      className='btn'
-      disabled={isSubmitting}
-    >
+    <button className='submit-button' disabled={isSubmitting}>
       {isSubmitting ? (
         <>
           <span className='loading loading-spinner'></span>

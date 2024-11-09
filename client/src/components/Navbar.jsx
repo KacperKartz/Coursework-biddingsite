@@ -79,7 +79,7 @@ const Navbar = () => {
                         </div>
                     ):
                     (        
-                <button type="button" onClick={navigateLogin}>
+                <button className='login-btn' type="button" onClick={navigateLogin}>
                         <img src={ login } rel='login'/>
                         <p>Login</p>
                                 
