@@ -38,7 +38,7 @@ const Navbar = () => {
                 </li>
                 <li>
                     <a href="#">
-                        <p>About</p>
+                        <p>FAQ</p>
                         <img src={chevron} rel='chevron' />
                     </a>
                 </li>
