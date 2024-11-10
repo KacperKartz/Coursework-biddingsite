@@ -380,19 +380,32 @@ header{
   width: 70px;
 }
 
-.navbar-container > div > div{
+.navbar-container > div > a{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  color: black;
 }
-.navbar-container > div > div > p{
+.navbar-container > div > a > p{
+  display: flex;
+  align-items: center;
   margin: 0;
 }
-.navbar-container > div > div > a{
+.logout-button > img{
+  margin-right: 5px;
+  transform: rotate(180deg);
+}
+.logout-button > p{
+  font-size: 15px;
+  font-weight: 600;
+}
+.navbar-container > div > a > a{
+  display: flex;
+  align-items: center;
   height:  30px;
   margin-left: 20px;
 }
-.navbar-container > div > div > a > p{
+.navbar-container > div > a > a > p{
   margin: 0;
 }
 
@@ -411,6 +424,8 @@ header{
   gap: 10px;
 }
 .navbar-container > div > button > p{
+  font-size: 15px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -801,17 +816,27 @@ header{
 .overlay-text{
   padding-top: 20px;
 }
+.overlay-text > h5{
+  margin: 20px 0;
+}
+.overlay-text > p{
+  margin: 0;
+}
+
 
 .star-rating {
   display: flex;
   flex-direction: row;
-  height: 18px; 
+  height: 20px; 
   gap: 10px;
+  margin: 0;
+  place-items: center;
 }
 
 .star-rating > p{
   color: #8C8C8C;
   font-size: 13px;
+  margin: 0;
 }
 
 .overlay-text > h5{

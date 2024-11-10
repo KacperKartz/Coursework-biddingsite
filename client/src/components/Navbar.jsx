@@ -8,6 +8,7 @@ import favourites from '../assets/Favourites.svg';
 import basket from '../assets/Basket.svg';
 import search from '../assets/Search.svg';
 import UserContainer from './UserContainer';
+import UserProfilePicture from './UserProfilePicture';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../store/appUserSlice';
 import { useState } from 'react';
@@ -60,18 +61,12 @@ const Navbar = () => {
                 <li>
                     <Link to="/" onClick={closeMenu}>
                         <p>Home</p>
-                        <img src={chevronActive} rel='chevron' />
+                        <img src={chevron} rel='chevron' />
                     </Link>
                 </li>
                 <li>
                     <Link to="/shop" onClick={closeMenu}>
                         <p>Shop</p>
-                        <img src={chevron} rel='chevron' />
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/#productCategories-container" onClick={closeMenu}>
-                        <p>Catagories</p>
                         <img src={chevron} rel='chevron' />
                     </Link>
                 </li>
@@ -91,14 +86,16 @@ const Navbar = () => {
             <div>
 
                     {user? (
-                        <div>
+                        <Link to='' onClick={closeMenu}>
+                            <UserProfilePicture />
                             <p>Hi {user.username}!</p>
-                            <a onClick={logout}>
+                            <a onClick={logout} className="logout-button">
+                                <img src={login}></img>  
                                 <p>
                                     Logout
-                                </p>    
+                                </p>  
                             </a>
-                        </div>
+                        </Link>
                     ):
                     (        
                     <button className='login-btn' type="button" onClick={navigateLogin}>
