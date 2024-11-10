@@ -6,7 +6,6 @@ const AddProductPage = () => {
   return (
     <div>
         <AddProductForm></AddProductForm>
-
     </div>
   )
 }

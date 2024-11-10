@@ -25,6 +25,7 @@ const Navbar = () => {
   const location = useLocation
 
   const navigateLogin = () => {
+    closeMenu()
     navigate("/login");
   };
 
@@ -37,6 +38,10 @@ const Navbar = () => {
   const loginProp = () => {
     console.log("login")
     navigate("/login")
+  }
+
+  const closeMenu = () =>{
+    setIsOpen(false);
   }
 
     return (
@@ -53,28 +58,28 @@ const Navbar = () => {
             </a>
             <ul>
                 <li>
-                    <Link to="/" className='activeLink'>
+                    <Link to="/" onClick={closeMenu}>
                         <p>Home</p>
                         <img src={chevronActive} rel='chevron' />
                     </Link>
                 </li>
                 <li>
-                    <a href="#product-collection-container">
+                    <Link to="/shop" onClick={closeMenu}>
                         <p>Shop</p>
                         <img src={chevron} rel='chevron' />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#productCategories-container">
+                    <Link to="/#productCategories-container" onClick={closeMenu}>
                         <p>Catagories</p>
                         <img src={chevron} rel='chevron' />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#">
+                    <Link to="#" onClick={closeMenu}>
                         <p>FAQ</p>
                         <img src={chevron} rel='chevron' />
-                    </a>
+                    </Link>
                 </li>
             </ul>
             <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -86,15 +91,19 @@ const Navbar = () => {
             <div>
 
                     {user? (
-                        <div>Hi {user.username}
-                            <button onClick={logout}>Logout</button>
+                        <div>
+                            <p>Hi {user.username}!</p>
+                            <a onClick={logout}>
+                                <p>
+                                    Logout
+                                </p>    
+                            </a>
                         </div>
                     ):
                     (        
-                <button className='login-btn' type="button" onClick={navigateLogin}>
+                    <button className='login-btn' type="button" onClick={navigateLogin}>
                         <img src={ login } rel='login'/>
-                        <p>Login</p>
-                                
+                        <p>Login</p>                        
                     </button>
                     )}
                 <a href="#">

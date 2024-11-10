@@ -27,9 +27,9 @@ ADDING PRODUCT FORM
 
 */
 
-.addProduct-form {
+.general-form{
   max-width: 500px;
-  margin: 2rem auto;
+  margin: 100px auto;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 8px;
@@ -37,14 +37,14 @@ ADDING PRODUCT FORM
   font-family: Arial, sans-serif;
 }
 
-.addProduct-form h4 {
+.general-form h4 {
   font-size: 1.5rem;
   color: #333333;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.addProduct-form label {
+.general-form label {
   display: block;
   font-weight: bold;
   color: #555555;
@@ -52,9 +52,9 @@ ADDING PRODUCT FORM
   font-size: 0.9rem;
 }
 
-.addProduct-form input,
-.addProduct-form .form-dropdown {
-  width: 100%;
+.general-form input,
+.general-form .form-dropdown {
+  width: 90%;
   padding: 0.75rem;
   margin-bottom: 1.5rem;
   border: 1px solid #ddd;
@@ -63,8 +63,8 @@ ADDING PRODUCT FORM
   transition: border-color 0.3s ease-in-out;
 }
 
-.addProduct-form input:focus,
-.addProduct-form .form-dropdown:focus {
+.general-form input:focus,
+.general-form .form-dropdown:focus {
   border-color: #007bff;
   outline: none;
 }
@@ -74,7 +74,7 @@ ADDING PRODUCT FORM
   appearance: none;
 }
 
-.addProduct-form .form-dropdown option {
+.general-form .form-dropdown option {
   padding: 0.5rem;
 }
 
@@ -380,6 +380,23 @@ header{
   width: 70px;
 }
 
+.navbar-container > div > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.navbar-container > div > div > p{
+  margin: 0;
+}
+.navbar-container > div > div > a{
+  height:  30px;
+  margin-left: 20px;
+}
+.navbar-container > div > div > a > p{
+  margin: 0;
+}
+
+
 .navbar-container > div > button{
   display: flex;
   flex-direction: row;
@@ -399,12 +416,8 @@ header{
 
 
 /*------------------------[ Component: Login ]------------------------*/
-.login-page-container{
-  position: absolute;
-  background-color: #ffe7dd;
-  height: 100vh;
-  width: 100vw;
-}
+
+
 
 /*------------------------[ Component: Welcome Page ]------------------------*/
 
@@ -678,6 +691,8 @@ header{
 .office-deal > div > div > h4, .kitchen-deal > div > div > h4{
   color: white;
   font-size: 44px;
+  font-weight: 600;
+  margin: 0;
 }
 .office-deal > div > div > a, .kitchen-deal > div > div > a{
   margin: auto;
@@ -704,6 +719,7 @@ header{
   font-size: 23px;
   font-weight: 800;
   color: #4E4E4E;
+  
 }
 
 .product-collection-filter{
@@ -992,9 +1008,6 @@ footer{
       column-gap: 50px;
       row-gap: 30px;
     }
-    /* .deals-section-container > div:nth-child(2){
-      display: none;
-    } */
 
     /*------------------------[ Media: Product Collection ]------------------------*/
 
