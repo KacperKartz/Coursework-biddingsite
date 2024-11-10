@@ -568,6 +568,7 @@ header{
   font-size: 23px;
   font-weight: 800;
   color: #4E4E4E;
+  margin: 0;
 }
 
 .productCategories-info > div{
@@ -587,6 +588,7 @@ header{
 .productCategories-info > a > h5{
   color: black;
   font-weight: 800;
+  margin: 0;
 }
 
 .productCategories-info > .bar-black{
@@ -894,6 +896,7 @@ footer{
     }
 
     .navbar-container{
+      z-index: 10;
       display: inline-block;
       overflow: hidden;
       background-color: white;
@@ -923,6 +926,9 @@ footer{
       right: 20px;
       width: 40%;
       top: 20px;
+    }
+    .navbar-container.open > form{
+      visibility: hidden;
     }
     .navbar-container > form > input {
       width: 100%

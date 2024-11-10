@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="bar2"></div>
             <div className="bar3"></div>
         </div>
-        <div className='navbar-container'>
+        <div className={`navbar-container ${isOpen ? 'open' : ''}`}>
             <a href="/" style={{ textDecoration: 'none' }}>
                 <img src={ logo } rel='AuctoLogo'/>
                 <h1>Aucto</h1>
