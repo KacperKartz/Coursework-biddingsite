@@ -863,6 +863,13 @@ header{
   box-shadow: 0 5px 0 white;
 }
 
+/*------------------------[ Page: Shop Page ]------------------------*/
+
+
+#shop-page-wrapper > #productCategories-container{
+  padding-top: 200px;
+  padding-bottom: 0;
+}
 
 /*------------------------[ Component: Product Categories ]------------------------*/
 
@@ -1051,6 +1058,7 @@ header{
 
 #product-collection-listings{
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(4, 25%);
 }
 
