@@ -45,6 +45,7 @@ const userController = {
     }
   },  
 
+
   async addUser(req, res) {
     const { username, email } = req.body;
 

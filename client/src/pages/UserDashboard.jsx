@@ -9,6 +9,7 @@ import HeartWhite from "../assets/Favourites-white.svg";
 import SellWhite from "../assets/sell-white.svg";
 import BasketComponenet from "../components/BasketComponenet";
 import Plus from "../assets/Plus.svg";
+import SellingItems from "../components/SellingItems";
 
 import { useSelector } from 'react-redux';
 
@@ -91,11 +92,12 @@ const UserDashboard = () => {
             )}
             {openMenu === 'selling' && (
                 <div className="submenu-content">
-                    <p>You are not currently selling any items.</p>
                     <Link to="../add-product" className="sellNewBtn">
                         <img src={Plus} alt="Selling" />
-                        Add a New Listing.
+                        Add a New Listing
                     </Link>
+
+                    <SellingItems user={userId}></SellingItems>
                 </div>
             )}
             </div>
