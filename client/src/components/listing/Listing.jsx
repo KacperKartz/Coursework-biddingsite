@@ -9,6 +9,7 @@ import Button from './Button';
 import WatchITemHeartGrey from '../../assets/watch-item-heart-grey.svg'
 import WatchITemHeartRed from '../../assets/watch-item-heart-red.svg'
 import Review from '../Review';
+import AuctionEndTimer from '../AuctionEndTimer';
 
 const Listing = ({ title, description, price, image, category, rating, bidding_end_date }) => {
   // Check if product exists and has the necessary fields
@@ -26,8 +27,10 @@ const Listing = ({ title, description, price, image, category, rating, bidding_e
       <div className='overlay-text'>
         <Rating ratingProp={rating} />
         <Title titleProp={title} />
-        <Price priceProp={price} />
-        {bidding_end_date}
+        <div>
+          <Price priceProp={price} />
+          <AuctionEndTimer targetDate={bidding_end_date} />
+        </div>
       </div>
 
 
