@@ -86,7 +86,7 @@ const Navbar = () => {
             <div>
 
                     {user? (
-                        <Link to='' onClick={closeMenu}>
+                        <Link to='/user-dashboard' onClick={closeMenu}>
                             <UserProfilePicture />
                             <p>Hi {user.username}!</p>
                             <a onClick={logout} className="logout-button">

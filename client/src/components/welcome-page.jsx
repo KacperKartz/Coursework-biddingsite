@@ -1,6 +1,7 @@
 import welcomeImage from '../assets/Landing Page.png';
 import arrow from '../assets/Arrow.svg';
 import CountdownTimer from './CountdownTimer';
+import { Link } from 'react-router-dom';
 
 const targetDate = '2024-11-12T15:00:00';
 
@@ -19,10 +20,10 @@ const WelcomePage = () =>{
         
                     <h2>10% off in<br/>November</h2>
     
-                    <a style={{ textDecoration: 'none' }} className='shopNowButton' href='#'>
+                    <Link className='shopNowButton' to='/shop'>
                         <p>Shop now</p>
                         <img src={ arrow } rel='arrow'/>
-                    </a>
+                    </Link>
                     <br /><br />
                     <h5 className="dealSub">DEAL ENDS IN</h5>
                     <div className="horizontal-bar bar-grey"></div>
