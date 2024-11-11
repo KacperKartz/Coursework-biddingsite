@@ -33,7 +33,7 @@ const ListingSearch = ({ listings }) => {
       <form className="search-form" role="search">
         <input
           type="search"
-          className="form-control form-control-dark text-bg-dark search-input"
+          className="form-control search-input"
           placeholder="Search listings..."
           aria-label="Search"
           value={searchQuery}
@@ -57,7 +57,6 @@ const ListingSearch = ({ listings }) => {
                   <p>{listing.description}</p>
                 </Link>
               </div>
-            
         ))
     ) : (
         <p className="no-listings">No listings found.</p>

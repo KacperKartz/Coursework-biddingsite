@@ -163,6 +163,8 @@ SEARCH BAR
 */
 
 .listing-search-container {
+  display: flex;
+  align-items: center;
   max-width: 1000px;
   position: relative;
 }
@@ -170,7 +172,6 @@ SEARCH BAR
 .search-form {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .search-input {
@@ -531,7 +532,9 @@ header{
   justify-content: center;
   gap: 30px;
   width: 100%;
-  padding-top: 15px;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
 }
 
 .hamburger-navbar{
@@ -1226,10 +1229,11 @@ footer{
       z-index: 10;
       display: inline-block;
       overflow: hidden;
-      background-color: white;
       transition: max-height 300ms;
       max-height: 0;
       padding-top: 0;
+      background-color: white;
+      backdrop-filter: none; 
     }
     .navbar-container.open{
       max-height: 500px;

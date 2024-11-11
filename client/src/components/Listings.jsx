@@ -59,6 +59,7 @@ const Listings = ({ filterType }) => {
             image={product.image}
             category={product.category}
             rating={product.rating_rate} 
+            bidding_end_date={product.bidding_end_date}
           />
         </Link>
       ))}

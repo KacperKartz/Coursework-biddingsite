@@ -10,7 +10,7 @@ import WatchITemHeartGrey from '../../assets/watch-item-heart-grey.svg'
 import WatchITemHeartRed from '../../assets/watch-item-heart-red.svg'
 import Review from '../Review';
 
-const Listing = ({ title, description, price, image, category, rating }) => {
+const Listing = ({ title, description, price, image, category, rating, bidding_end_date }) => {
   // Check if product exists and has the necessary fields
   if (!title || !price || !image || !category || !rating) {
     return <p>Loading...</p>;  // Display a loading message or placeholder while data is being fetched
@@ -27,6 +27,7 @@ const Listing = ({ title, description, price, image, category, rating }) => {
         <Rating ratingProp={rating} />
         <Title titleProp={title} />
         <Price priceProp={price} />
+        {bidding_end_date}
       </div>
 
 
