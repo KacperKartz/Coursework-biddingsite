@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/AuctoLogoLarge.svg';
 import chevron from '../assets/chevronBlack.svg';
 import chevronActive from '../assets/chevronOrange.svg';
@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
-      setIsOpen(!isOpen);  // Toggle between true/false
+      setIsOpen(!isOpen); 
     };
 
   const user = useSelector((state) =>state.appUser.user)
@@ -59,22 +59,20 @@ const Navbar = () => {
             </a>
             <ul>
                 <li>
-                    <Link to="/" onClick={closeMenu}>
+                    <NavLink to="/" onClick={closeMenu}>
                         <p>Home</p>
-                        <img src={chevron} rel='chevron' />
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/shop" onClick={closeMenu}>
+                    <NavLink to="/shop" onClick={closeMenu}>
                         <p>Shop</p>
                         <img src={chevron} rel='chevron' />
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="#" onClick={closeMenu}>
+                    <NavLink to="/faq" onClick={closeMenu}>
                         <p>FAQ</p>
-                        <img src={chevron} rel='chevron' />
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
             <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

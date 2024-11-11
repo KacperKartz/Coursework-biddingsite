@@ -331,6 +331,7 @@ header{
 .navbar-container > a{
   gap: 10px;
 }
+
 .navbar-container > a > h1{
   font-size: 32px;
   letter-spacing: 2px;
@@ -354,7 +355,7 @@ header{
   color: black;
 }
 
-.navbar-container > ul > li > .activeLink{
+.navbar-container > ul > li > a.active{
   color: #FF750B;
 }
 
