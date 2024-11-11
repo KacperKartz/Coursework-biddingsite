@@ -84,10 +84,18 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/shop" onClick={closeMenu}>
-                        <p>Shop</p>
-                        <img src={chevron} rel='chevron' />
-                    </NavLink>
+                <NavLink
+                  to="/shop"
+                  onClick={closeMenu}
+                >
+                  {({ isActive }) => (
+                    <>
+                      <p>Shop</p>
+                      {/* Conditionally render the chevron based on isActive */}
+                      <img src={isActive ? chevronActive : chevron} alt="chevron" />
+                    </>
+                  )}
+                </NavLink>
                 </li>
                 <li>
                     <NavLink to="/faq" onClick={closeMenu}>

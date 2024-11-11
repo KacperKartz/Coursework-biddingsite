@@ -179,15 +179,20 @@ SEARCH BAR
   padding: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 4px 0 0 4px;
+  height: 35px;
+}
+
+.search-input:focus{
+  outline: none;
 }
 
 .search-button {
-  background: #00000010;
+  background-color: #545454;
   border: none;
   border-radius: 0 4px 4px 0;
   padding: 0.5rem;
+  height: 35px;
 }
-
 
 
 
