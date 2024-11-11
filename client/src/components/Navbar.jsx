@@ -103,12 +103,12 @@ const Navbar = () => {
                         <p>Login</p>                        
                     </button>
                     )}
-                <a href="#">
+                <Link to="/user-dashboard?menu=watchlist">
                     <img src={ favourites } rel='chevron' />
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="/user-dashboard?menu=basket">
                     <img src={ basket } rel='chevron' />
-                </a>
+                </Link>
             </div>
         </div>
     </header>

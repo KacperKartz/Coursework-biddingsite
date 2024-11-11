@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Basket from "../assets/Basket.svg";
 import Heart from "../assets/Favourites.svg";
 import Sell from "../assets/sell.svg";
@@ -13,10 +13,24 @@ const UserDashboard = () => {
     // State to control which submenu is open
     const [openMenu, setOpenMenu] = useState(null);
 
+    // Get the URL location object
+    const location = useLocation();
+
     // Toggle function to show/hide submenus
     const toggleMenu = (menu) => {
         setOpenMenu(openMenu === menu ? null : menu); // Close if it's open, otherwise open it
     };
+
+    // Effect to handle URL parameters and open the submenu
+    useEffect(() => {
+        // Parse the query parameter to find the "menu" value
+        const params = new URLSearchParams(location.search);
+        const menu = params.get('menu');
+        
+        if (menu) {
+            setOpenMenu(menu);  // Set the openMenu based on URL parameter
+        }
+    }, [location.search]);  // Run this effect whenever the URL changes
 
     return (
         <div className="user-dashboard-wrapper">

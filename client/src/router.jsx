@@ -17,6 +17,7 @@ import {action as loginAction} from "./pages/LoginPage"
 import { store } from "./store/store";
 import AddProductPage from "./pages/AddProductPage";
 import UserDashboard from "./pages/UserDashboard";
+import FAQPage from "./pages/FAQPage";
 
 export const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
             {
                 path:"/user-dashboard",
                 element:<UserDashboard />,
+            },
+            {
+                path:"/faq",
+                element:<FAQPage />,
             }
         ]
     }
