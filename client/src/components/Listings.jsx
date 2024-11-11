@@ -1,16 +1,15 @@
 // Listings.jsx
 import React, { useState, useEffect } from 'react';
-import Listing from './listing/Listing'; // Ensure this component exists
+import Listing from './listing/Listing'; 
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
 const Listings = ({ filterType }) => {  
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
-  const [error, setError] = useState(null); // Optional: add error state
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
 
-  // Fetch data from API
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_APP_BACKEND_API}/api/products`)
       .then(response => {

@@ -8,6 +8,7 @@ import Rating from './Rating';
 import Button from './Button';
 import WatchITemHeartGrey from '../../assets/watch-item-heart-grey.svg'
 import WatchITemHeartRed from '../../assets/watch-item-heart-red.svg'
+import Review from '../Review';
 
 const Listing = ({ title, description, price, image, category, rating }) => {
   // Check if product exists and has the necessary fields
@@ -27,6 +28,7 @@ const Listing = ({ title, description, price, image, category, rating }) => {
         <Title titleProp={title} />
         <Price priceProp={price} />
       </div>
+
 
       {/* <div className='listing-desc'>
         <Category categoryProp={category} />

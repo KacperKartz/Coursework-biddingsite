@@ -3,15 +3,20 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import RatingMui from '@mui/material/Rating';
 import AuctionComponent from "./WStest"
+import ReviewComponent from '../components/Review';
+import { useSelector } from 'react-redux';
+
 
 const ProductPage = () => {
   const { productId } = useParams(); // Retrieve the product ID from the URL
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [userId, setUserId] = useState(null);
+  const user = useSelector((state) =>state.appUser.user)
 
+  
   useEffect(() => {
-    // Fetch product details based on productId
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND_API}/api/products/${productId}`);
@@ -26,8 +31,25 @@ const ProductPage = () => {
     fetchProduct();
   }, [productId]);
 
+  useEffect(() => {
+    const fetchUserId = async () => {
+      if (!user || !user.username) return; 
+
+      try {
+        const response = await axios.post(`http://localhost:5000/api/user/${user.username}`);
+        setUserId(response.data.userId);
+      } catch (error) {
+        console.error('Error fetching user ID:', error);
+      }
+    };
+
+    fetchUserId();
+  }, [user]);
+
   if (loading) return <div className="product-page-container">Loading...</div>;
   if (error) return <div className="product-page-container">Error: {error.message}</div>;
+
+
 
   return (
     <div className="product-page-container">
@@ -49,6 +71,7 @@ const ProductPage = () => {
             <p>{product.description}</p>
             <br /><br />
           <AuctionComponent productID={productId}></AuctionComponent>
+          <ReviewComponent productId={productId} userId={userId}></ReviewComponent>
           </div>
         </>
       ) : (

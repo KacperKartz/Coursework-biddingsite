@@ -5,6 +5,9 @@ const User = {
     return await client.query('SELECT * FROM users');
   },
 
+  async getUserId(username) {
+    return client.query("SELECT id FROM users WHERE username = $1", [username]);
+  },
 
 async addUser(data) {
   const { username, email } = data;
@@ -14,6 +17,10 @@ async addUser(data) {
   );
   return result.rows[0];
 },
+
+
+
+
 };
 
 

@@ -11,7 +11,7 @@ import { store } from './store/store.js';
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+
 <Auth0Provider
   domain={import.meta.env.VITE_AUTH0_DOMAIN}
   clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
@@ -20,5 +20,5 @@ createRoot(document.getElementById('root')).render(
         <RouterProvider router={router}></RouterProvider>
       </Provider>
     </Auth0Provider>
-  </StrictMode>,
+
 )

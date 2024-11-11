@@ -37,5 +37,42 @@ const productController = {
     }
   },
 
+
+  async  getProductReviews(req, res) {
+    const { productId } = req.params;
+
+    try {
+        const result = await Products.getProductReviews(productId);
+        res.status(200).json(result.rows);
+    } catch (error) {
+        console.error("Error fetching product reviews:", error);
+        res.status(500).json({ error: "Failed to fetch product reviews" });
+    }
+},
+
+
+async createProductReview(req, res) {
+  const { user_id, rating, comment } = req.body;
+  const productId = req.params.productId; 
+
+  if (!user_id || !productId || !rating) {
+      return res.status(400).json({ error: "user_id, product_id, and rating are required." });
+  }
+
+  try {
+      const result = await Products.createProductReview({
+          userId: user_id,
+          productId: productId,
+          rating: rating,
+          comment: comment
+      });
+      res.status(201).json(result.rows[0]);
+  } catch (error) {
+      console.error("Error creating product review:", error);
+      res.status(500).json({ error: "Failed to create product review" });
+  }
+}
+
+
 };
 module.exports = productController;
