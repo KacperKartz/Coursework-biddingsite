@@ -27,6 +27,23 @@ const userController = {
       res.status(500).send('Server Error');
     }
   },  
+  async getUserIdEmail(req, res) {
+    const { email } = req.params;
+  
+    try {
+      const result = await User.getUserIdEmail(email);
+      if (result.rows.length === 0) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+
+
+      const userId = result.rows[0].id;
+      res.status(200).json({ userId });
+    } catch (err) {
+      console.error('Error fetching user ID:', err);
+      res.status(500).send('Server Error');
+    }
+  },  
 
   async addUser(req, res) {
     const { username, email } = req.body;

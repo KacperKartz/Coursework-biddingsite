@@ -8,11 +8,11 @@ const Products = {
 
 
   async addProduct(data) {
-    const { title, description, price, image, category, bidTimer } = data;
+    const { title, description, price, image, category, bidTimer, userId } = data;
   
     const result = await db.query(
-      'INSERT INTO products (title, description, price, category, image, bidding_end_date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
-      [title, description, price, category, image, bidTimer]
+      'INSERT INTO products (title, description, price, category, image, bidding_end_date, seller_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+      [title, description, price, category, image, bidTimer, userId]
     );
   
     return result.rows[0];

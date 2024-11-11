@@ -11,6 +11,16 @@ const BasketController = {
       res.status(500).json({ error: 'Failed to fetch basket items' });
     }
   },
+  async getBasketItems(req, res) {
+    const { userId } = req.params;
+    try {
+      const result = await BasketModel.getBasketItems(userId);
+      res.status(200).json(result.rows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Failed to fetch basket items' });
+    }
+  },
 
   async addItem(req, res) {
     const { userId } = req.params;

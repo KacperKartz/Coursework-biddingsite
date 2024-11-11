@@ -26,7 +26,7 @@ const Listings = ({ filterType }) => {
   if (loading) {
     return <div>Loading Items...</div>; 
   }
-
+  
 
   if (error) {
     return <div>Error fetching data: {error.message}</div>; 

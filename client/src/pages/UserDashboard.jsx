@@ -7,8 +7,10 @@ import MinSubMenu from "../assets/minimise-submenu.svg";
 import BasketWhite from "../assets/Basket-white.svg";
 import HeartWhite from "../assets/Favourites-white.svg";
 import SellWhite from "../assets/sell-white.svg";
+import BasketComponenet from "../components/BasketComponenet";
 import Plus from "../assets/Plus.svg";
 
+import { useSelector } from 'react-redux';
 
 const UserDashboard = () => {
     // State to control which submenu is open
@@ -21,6 +23,9 @@ const UserDashboard = () => {
     const toggleMenu = (menu) => {
         setOpenMenu(openMenu === menu ? null : menu); // Close if it's open, otherwise open it
     };
+
+    const userId = useSelector((state) => state.appUser.user?.userId);
+    console.log(userId)
 
     // Effect to handle URL parameters and open the submenu
     useEffect(() => {
@@ -76,7 +81,7 @@ const UserDashboard = () => {
             {/* Render submenu content in the main area based on openMenu state */}
             {openMenu === 'basket' && (
                 <div className="submenu-content">
-                    <p>Your basket is currently empty.</p>
+                <BasketComponenet user={userId}></BasketComponenet>
                 </div>
             )}
             {openMenu === 'watchlist' && (

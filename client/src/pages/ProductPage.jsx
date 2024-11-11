@@ -12,8 +12,8 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [userId, setUserId] = useState(null);
-  const user = useSelector((state) =>state.appUser.user)
+
+  const userId = useSelector((state) => state.appUser.user?.userId);
 
   
   useEffect(() => {
@@ -31,20 +31,6 @@ const ProductPage = () => {
     fetchProduct();
   }, [productId]);
 
-  useEffect(() => {
-    const fetchUserId = async () => {
-      if (!user || !user.username) return; 
-
-      try {
-        const response = await axios.post(`http://localhost:5000/api/user/${user.username}`);
-        setUserId(response.data.userId);
-      } catch (error) {
-        console.error('Error fetching user ID:', error);
-      }
-    };
-
-    fetchUserId();
-  }, [user]);
 
   if (loading) return <div className="product-page-container">Loading...</div>;
   if (error) return <div className="product-page-container">Error: {error.message}</div>;

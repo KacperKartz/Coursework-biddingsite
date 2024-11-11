@@ -106,17 +106,18 @@ const getProductPrice = async (productId) => {
     try {
       const priceValue = await getProductPrice(productId);
       const startingBid = priceValue * 0.25;
+    
       console.log(`Starting bid for product ${productId}:`, startingBid);
   
 
       auctions[productId] = {
-        highestBid: startingBid,
+        highestBid: startingBid.toFixed(2),
         highestBidder: null,
-        auctionEnds: Date.now() + 120000, // auction timer - in a real case it would use db which is set up with auction endings but for demo purposes this is 6sec
+        auctionEnds: Date.now() + 6000, // auction timer - in a real case it would use db which is set up with auction endings but for demo purposes this is 6sec
       };
   
 
-      setTimeout(() => finalizeAuction(productId), 120000);
+      setTimeout(() => finalizeAuction(productId), 6000);
   
       return auctions[productId];
     } catch (error) {

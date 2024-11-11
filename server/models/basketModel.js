@@ -11,6 +11,31 @@ const BasketModel = {
     );
   },
 
+
+async getBasketItems(userId){
+  return await db.query(`
+      SELECT 
+        basket_items.id AS basket_item_id,
+        basket_items.product_id,
+        basket_items.price AS item_price,
+        basket_items.quantity,
+        (basket_items.price * basket_items.quantity) AS total_price,
+        products.title AS product_name,      
+        products.description,
+        products.image               
+      FROM 
+        basket_items
+      JOIN 
+        basket ON basket_items.basket_id = basket.id
+      JOIN 
+        products ON basket_items.product_id = products.id
+      WHERE 
+        basket.user_id = $1;
+    `,[userId]  
+  );
+},
+  
+
   async createBasket(userId) {
     return await db.query(
       `INSERT INTO basket (user_id) VALUES ($1) RETURNING id`,

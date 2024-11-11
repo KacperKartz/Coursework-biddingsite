@@ -11,14 +11,16 @@ export const action = (store) =>
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
     try{
-      console.log(data)
       const response = await axios.post(LOGINURL,data, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       });
       console.log(response.data);
-      store.dispatch(loginUser(response.data))
+      const userIdResponse = await axios.post(`http://localhost:5000/api/user-by-mail/${response.data.user.email}`);
+      const userId = userIdResponse.data.userId;
+
+      store.dispatch(loginUser({ user: { ...response.data.user, userId } }));
       return redirect("/");
     }catch(error){
       const errorMessage = 

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 function WebSocketComponent({ productID }) {
   const [auctionState, setAuctionState] = useState({ highestBid: 0, highestBidder: null });
-  const [newBid, setNewBid] = useState('');
+  const [newBid, setNewBid] = useState();
   const socketRef = useRef(null);
 
   // Getting the username from redux
@@ -35,7 +35,7 @@ function WebSocketComponent({ productID }) {
           highestBidder: updatedAuctionState.highestBidder || 'No bids yet.',
         });
 
-        setNewBid(updatedAuctionState.highestBid + 2);
+        setNewBid(parseFloat(updatedAuctionState.highestBid) + 2);
       }
     };
 
@@ -89,7 +89,7 @@ function WebSocketComponent({ productID }) {
         type="number"
         value={newBid}
         onChange={(e) => setNewBid(e.target.value)}
-        placeholder="Enter your bid"
+        placeholder={parseFloat(auctionState.highestBid)+2}
         min={auctionState.highestBid + 1} // Ensures bid is higher than current highest bid
         disabled={!user} // Disable if user is not available aka not logged in
       />

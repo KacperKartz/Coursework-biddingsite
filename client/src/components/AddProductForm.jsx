@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import { Form, useNavigate } from 'react-router-dom';
 import FormInput from './FormInput';
 import SubmitButton from './SubmitButton';
+import { useSelector } from 'react-redux';
 
 const AddProductForm = () => {
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+  const userId = useSelector((state) => state.appUser.user?.userId);
 
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
-
+    data.userId = userId;
     const apiUrl = `${import.meta.env.VITE_APP_BACKEND_API}/api/addProduct`;
 
     try {
