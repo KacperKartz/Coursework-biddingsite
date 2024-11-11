@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Title = ({ titleProp, charLimit = 25 }) => {
+const Title = ({ titleProp, charLimit }) => {
   const truncatedTitle = titleProp.length > charLimit
   ? `${titleProp.substring(0, charLimit)}...`
   :titleProp;

@@ -11,7 +11,7 @@ import WatchITemHeartRed from '../../assets/watch-item-heart-red.svg'
 import Review from '../Review';
 import AuctionEndTimer from '../AuctionEndTimer';
 
-const Listing = ({ title, description, price, image, category, rating, bidding_end_date }) => {
+const Listing = ({ title, description, price, image, category, rating, charLimit, bidding_end_date }) => {
   // Check if product exists and has the necessary fields
   if (!title || !price || !image || !category || !rating) {
     return <p>Loading...</p>;  // Display a loading message or placeholder while data is being fetched
@@ -26,7 +26,7 @@ const Listing = ({ title, description, price, image, category, rating, bidding_e
 
       <div className='overlay-text'>
         <Rating ratingProp={rating} />
-        <Title titleProp={title} />
+        <Title titleProp={title} charLimit={charLimit} />
         <div>
           <Price priceProp={price} />
           <AuctionEndTimer targetDate={bidding_end_date} />

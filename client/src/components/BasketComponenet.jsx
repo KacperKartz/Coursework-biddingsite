@@ -24,8 +24,6 @@ const BasketComponenet = ({user}) => {
           fetchBasketItems();
         }, []);
 
-        if (loading) return <p>Loading basket items...</p>;
-        if (error) return <p>{error}</p>;
     
   return (
     <div className="basket">

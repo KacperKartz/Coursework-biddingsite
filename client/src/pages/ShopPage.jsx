@@ -1,8 +1,12 @@
+import ProductCategories from '../components/ProductCategories';
 import ProductCollection from '../components/ProductCollection'
 
 const ShopPage = () => {
     return(
-        <ProductCollection />
+        <>
+            <ProductCategories />
+            <ProductCollection />
+        </>
     )
 }
 export default ShopPage;

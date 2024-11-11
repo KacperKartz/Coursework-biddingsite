@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import searchIcon from '../assets/Search.svg';
+import Title from './listing/Title';
 
 const ListingSearch = ({ listings }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -52,16 +53,18 @@ const ListingSearch = ({ listings }) => {
           {filteredListings.length > 0 ? (
             filteredListings.map((listing) => (
               <div key={listing.id} className="listing-item">
-                <Link to={`/product/${listing.id}`} className="listing-link">
-                  <h3>{listing.title}</h3>
-                  <p>{listing.description}</p>
+                <Link to={`/product/${listing.id}`} className="listing-link" onClick={hideListings}>
+                  <div>
+                    <img src={listing.image}></img>
+                  </div>
+                  <h3><Title titleProp={listing.title} charLimit={60} /></h3>
                 </Link>
               </div>
-        ))
-    ) : (
-        <p className="no-listings">No listings found.</p>
-    )}
-    <button className='hide-button submit-button' onClick={hideListings}>Hide</button>
+            ))
+          ) : (
+            <p className="no-listings">No listings found.</p>
+          )}
+          <button className='hide-button submit-button' onClick={hideListings}>Hide</button>
         </div>
       )}
       

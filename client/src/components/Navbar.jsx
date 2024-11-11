@@ -107,7 +107,7 @@ const Navbar = () => {
 
                     {user? (
                       <>
-                        <Link to='/user-dashboard' onClick={closeMenu}>
+                        <Link to='/user-dashboard?menu=basket' onClick={closeMenu}>
                           <UserProfilePicture />
                           <p>Hi {user.username}!</p>
                         </Link>

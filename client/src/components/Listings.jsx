@@ -54,6 +54,7 @@ const Listings = ({ filterType }) => {
         <Link key={product.id} to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>
           <Listing
             title={product.title}
+            charLimit={25}
             description={product.description}
             price={product.price}
             image={product.image}
