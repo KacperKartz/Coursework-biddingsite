@@ -16,6 +16,7 @@ import {action as registerAction} from "./pages/RegisterPage";
 import {action as loginAction} from "./pages/LoginPage"
 import { store } from "./store/store";
 import AddProductPage from "./pages/AddProductPage";
+import UserDashboard from "./pages/UserDashboard";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
             {
                 path:"/add-product",
                 element:<AddProductPage />,
+            },
+            {
+                path:"/user-dashboard",
+                element:<UserDashboard />,
             }
         ]
     }

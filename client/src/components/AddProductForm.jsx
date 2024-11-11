@@ -38,7 +38,7 @@ const AddProductForm = () => {
   };
 
   return (
-    <div className="addProduct-form">
+    <div className="general-form">
       <h4>Add Product</h4>
       <Form method="POST" onSubmit={handleSubmit}>
         <label>Title</label>

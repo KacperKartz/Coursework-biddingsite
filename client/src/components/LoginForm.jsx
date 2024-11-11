@@ -5,17 +5,17 @@ import SubmitButton from './SubmitButton';
 
 const LoginForm = () => {
   return (
-    <div className='login-form'>
+    <div className='general-form'>
       <h4>Please Login</h4>
       <Form method='POST'>
-        <label>email</label>
+        <label>Email:</label>
         <FormInput 
           type="text"
           label="email"
           name="identifier"
           placeholder="email"
         />
-        <label>Password</label>
+        <label>Password:</label>
         <FormInput 
           type="password"
           label="password"

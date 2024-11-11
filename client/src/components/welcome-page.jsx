@@ -1,6 +1,7 @@
 import welcomeImage from '../assets/Landing Page.png';
 import arrow from '../assets/Arrow.svg';
 import CountdownTimer from './CountdownTimer';
+import { Link } from 'react-router-dom';
 
 const targetDate = '2024-11-12T15:00:00';
 
@@ -13,17 +14,17 @@ const WelcomePage = () =>{
                     <p>
                         Aucto bidding site<br/>2024
                     </p>
-                    <br /><br />
+                    <br />
                     <h5>NEW DEALS</h5>
                     <div className="horizontal-bar bar-black"></div>
-                    <br />
+        
                     <h2>10% off in<br/>November</h2>
-                    <br />
-                    <a style={{ textDecoration: 'none' }} className='shopNowButton' href='#'>
+    
+                    <Link className='shopNowButton' to='/shop'>
                         <p>Shop now</p>
                         <img src={ arrow } rel='arrow'/>
-                    </a>
-                    <br /><br /><br /><br />
+                    </Link>
+                    <br /><br />
                     <h5 className="dealSub">DEAL ENDS IN</h5>
                     <div className="horizontal-bar bar-grey"></div>
                     <CountdownTimer targetDate={targetDate}/>

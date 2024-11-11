@@ -161,9 +161,9 @@ ADDING PRODUCT FORM
 
 */
 
-.addProduct-form {
+.general-form{
   max-width: 500px;
-  margin: 2rem auto;
+  margin: 100px auto;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 8px;
@@ -171,14 +171,14 @@ ADDING PRODUCT FORM
   font-family: Arial, sans-serif;
 }
 
-.addProduct-form h4 {
+.general-form h4 {
   font-size: 1.5rem;
   color: #333333;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.addProduct-form label {
+.general-form label {
   display: block;
   font-weight: bold;
   color: #555555;
@@ -186,9 +186,9 @@ ADDING PRODUCT FORM
   font-size: 0.9rem;
 }
 
-.addProduct-form input,
-.addProduct-form .form-dropdown {
-  width: 100%;
+.general-form input,
+.general-form .form-dropdown {
+  width: 90%;
   padding: 0.75rem;
   margin-bottom: 1.5rem;
   border: 1px solid #ddd;
@@ -197,8 +197,8 @@ ADDING PRODUCT FORM
   transition: border-color 0.3s ease-in-out;
 }
 
-.addProduct-form input:focus,
-.addProduct-form .form-dropdown:focus {
+.general-form input:focus,
+.general-form .form-dropdown:focus {
   border-color: #007bff;
   outline: none;
 }
@@ -208,7 +208,7 @@ ADDING PRODUCT FORM
   appearance: none;
 }
 
-.addProduct-form .form-dropdown option {
+.general-form .form-dropdown option {
   padding: 0.5rem;
 }
 
@@ -439,10 +439,9 @@ ADDING PRODUCT FORM
 /*------------------------[ Component: NavBar ]------------------------*/
 
 header{
-  position: relative;
+  position: absolute;
   width: 100%;
   z-index: 10;
-  background-color: #ffe7dd;
 }
 .navbar-container{
   justify-content: center;
@@ -515,6 +514,36 @@ header{
   width: 70px;
 }
 
+.navbar-container > div > a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+}
+.navbar-container > div > a > p{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.logout-button > img{
+  margin-right: 5px;
+  transform: rotate(180deg);
+}
+.logout-button > p{
+  font-size: 15px;
+  font-weight: 600;
+}
+.navbar-container > div > a > a{
+  display: flex;
+  align-items: center;
+  height:  30px;
+  margin-left: 20px;
+}
+.navbar-container > div > a > a > p{
+  margin: 0;
+}
+
+
 .navbar-container > div > button{
   display: flex;
   flex-direction: row;
@@ -529,17 +558,15 @@ header{
   gap: 10px;
 }
 .navbar-container > div > button > p{
+  font-size: 15px;
+  font-weight: 600;
   margin: 0;
 }
 
 
 /*------------------------[ Component: Login ]------------------------*/
-.login-page-container{
-  position: absolute;
-  background-color: #ffe7dd;
-  height: 100vh;
-  width: 100vw;
-}
+
+
 
 /*------------------------[ Component: Welcome Page ]------------------------*/
 
@@ -555,15 +582,21 @@ header{
   font-size: 52px;
   font-weight: 200;
   line-height: 140%;
+  margin: 30px 0;
 }
 
 .welcome-page-info > h5{
   font-weight: 800;
+  margin: 5px 0;
 }
 
 .welcome-page-info{
   position: relative;
   padding: 180px 10%;
+}
+
+.welcome-page-info > p{
+  margin: 0;
 }
 
 .vertical-bar{
@@ -608,7 +641,7 @@ header{
 }
 
 .countdownTimer{
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -625,26 +658,29 @@ header{
 }
 
 .countdownTimer > span > h6{
-  
   font-weight: 200;
   margin: 0;
 }
 
 #timerD{
   font-size: 115px;
-  width: 110px;
+  width: 120px;
+  transform: translateY(40px);
 }
 #timerH{
   font-size: 64px;
   width: 60px;
+  transform: translateY(20px);
 }
 #timerM{
   font-size: 45px;
   width: 40px;
+  transform: translateY(13px);
 }
 #timerS{
   font-size: 35px;
   width: 30px;
+  transform: translateY(7px);
 }
 
 .countdownTimer > span > p{
@@ -694,6 +730,7 @@ header{
   font-size: 23px;
   font-weight: 800;
   color: #4E4E4E;
+  margin: 0;
 }
 
 .productCategories-info > div{
@@ -713,6 +750,7 @@ header{
 .productCategories-info > a > h5{
   color: black;
   font-weight: 800;
+  margin: 0;
 }
 
 .productCategories-info > .bar-black{
@@ -802,6 +840,8 @@ header{
 .office-deal > div > div > h4, .kitchen-deal > div > div > h4{
   color: white;
   font-size: 44px;
+  font-weight: 600;
+  margin: 0;
 }
 .office-deal > div > div > a, .kitchen-deal > div > div > a{
   margin: auto;
@@ -828,6 +868,7 @@ header{
   font-size: 23px;
   font-weight: 800;
   color: #4E4E4E;
+  
 }
 
 .product-collection-filter{
@@ -909,17 +950,27 @@ header{
 .overlay-text{
   padding-top: 20px;
 }
+.overlay-text > h5{
+  margin: 20px 0;
+}
+.overlay-text > p{
+  margin: 0;
+}
+
 
 .star-rating {
   display: flex;
   flex-direction: row;
-  height: 18px; 
+  height: 20px; 
   gap: 10px;
+  margin: 0;
+  place-items: center;
 }
 
 .star-rating > p{
   color: #8C8C8C;
   font-size: 13px;
+  margin: 0;
 }
 
 .overlay-text > h5{
@@ -974,6 +1025,59 @@ footer{
   margin: 0 20px;
 }
 
+/*------------------------[ Page: User Dashboard ]------------------------*/
+
+.user-dashboard-wrapper{
+  margin: 100px 10%;
+  display: grid;
+  grid-template-columns: 20% 80%; 
+  grid-template-rows: 60px 80%;
+  height: 1000px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title{
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border-bottom: 1px solid #afafaf;
+  width: 100%;
+  align-items: center;
+}
+.dashboard-title > h1{
+  color: #383838;
+  font-weight: 600;
+  margin-left: 30px;
+  font-size: 20px;
+}
+.dashboard-title > h1 > a{
+  margin-right: 10px;
+}
+
+.submenu-links{
+  padding: 30px;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #afafaf;
+  height: 890px;
+}
+.submenu-links > a{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  color: #383838;
+  font-weight: 600;
+}
+
+.submenu-links > a > img{
+  margin-right: 10px;
+}
+
+
+
 /*------------------------[ Media Queries ]------------------------*/
 
 /* Portrait IPhone*/
@@ -989,6 +1093,11 @@ footer{
       cursor: pointer;    
       position: absolute;
       left: 25px;
+    }
+
+    .hamburger-navbar{
+      margin-top: 20px;
+      display: visible;
     }
 
     .hamburger-navbar > div {
@@ -1015,6 +1124,7 @@ footer{
     }
 
     .navbar-container{
+      z-index: 10;
       display: inline-block;
       overflow: hidden;
       background-color: white;
@@ -1044,6 +1154,9 @@ footer{
       right: 20px;
       width: 40%;
       top: 20px;
+    }
+    .navbar-container.open > form{
+      visibility: hidden;
     }
     .navbar-container > form > input {
       width: 100%
@@ -1107,9 +1220,6 @@ footer{
       column-gap: 50px;
       row-gap: 30px;
     }
-    /* .deals-section-container > div:nth-child(2){
-      display: none;
-    } */
 
     /*------------------------[ Media: Product Collection ]------------------------*/
 
