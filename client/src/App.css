@@ -67,11 +67,11 @@ ReviewComponent.css
 */
 .review-section {
   background-color: #f9f9f9;
-  padding: 20px;
+  padding: 20px 0;
   border-radius: 8px;
-  max-width: 600px;
-  margin: 20px auto;
+  margin: 100px 0;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  grid-column: 1 / 3;
 }
 
 .review-title {
@@ -203,6 +203,8 @@ SEARCH BAR
 */
 
 .listing-search-container {
+  display: flex;
+  align-items: center;
   max-width: 1000px;
   position: relative;
 }
@@ -210,7 +212,6 @@ SEARCH BAR
 .search-form {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .search-input {
@@ -571,7 +572,9 @@ header{
   justify-content: center;
   gap: 30px;
   width: 100%;
-  padding-top: 15px;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
 }
 
 .hamburger-navbar{
@@ -1104,9 +1107,19 @@ header{
   font-size: 15px;
 }
 
-.overlay-text > p{
+.overlay-text > div{
+  display: flex;
+  flex-direction: row;
+}
+
+.overlay-text > div > p, .overlay-text > div > div > p{
+  margin: 0;
   color: #828282;
   font-size: 13px;
+}
+
+.AuctionEndTimer{
+  margin-left: 5px;
 }
 
 /*------------------------[ Component: Footer ]------------------------*/
@@ -1216,6 +1229,20 @@ footer{
   color: white;
 }
 
+.sellNewBtn{
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+  background-color: #FF750B;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+.sellNewBtn > img{
+  margin-right: 10px;
+}
+
 
 /*------------------------[ Media Queries ]------------------------*/
 
@@ -1262,14 +1289,19 @@ footer{
       transform: translate(0, -11px) rotate(45deg);
     }
 
+    header{
+      height: 0;
+    }
     .navbar-container{
       z-index: 10;
       display: inline-block;
       overflow: hidden;
-      background-color: white;
       transition: max-height 300ms;
       max-height: 0;
       padding-top: 0;
+      background-color: white;
+      backdrop-filter: none; 
+      padding: 0;
     }
     .navbar-container.open{
       max-height: 500px;
@@ -1411,6 +1443,11 @@ footer{
     .product-page-container button{
       margin: 15px 0;
     }
+
+    .review-section {
+      grid-column: 1 / 2;
+    }
+    
 }
 
 /* Landscape Iphone*/

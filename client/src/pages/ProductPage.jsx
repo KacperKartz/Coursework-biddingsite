@@ -57,8 +57,8 @@ const ProductPage = () => {
             <p>{product.description}</p>
             <br /><br />
           <AuctionComponent productID={productId}></AuctionComponent>
-          <ReviewComponent productId={productId} userId={userId}></ReviewComponent>
           </div>
+          <ReviewComponent productId={productId} userId={userId}></ReviewComponent>
         </>
       ) : (
         <p>Product not found.</p>

@@ -8,6 +8,7 @@ import BasketWhite from "../assets/Basket-white.svg";
 import HeartWhite from "../assets/Favourites-white.svg";
 import SellWhite from "../assets/sell-white.svg";
 import BasketComponenet from "../components/BasketComponenet";
+import Plus from "../assets/Plus.svg";
 
 import { useSelector } from 'react-redux';
 
@@ -41,10 +42,10 @@ const UserDashboard = () => {
         <div className="user-dashboard-wrapper">
             <div className="dashboard-title">
                 <h1>
-                <Link>
-                    <img src={MinSubMenu} alt="Minimize submenu" />
-                </Link>
-                User Dashboard
+                    <Link>
+                        <img src={MinSubMenu} alt="Minimize submenu" />
+                    </Link>
+                    User Dashboard
                 </h1>
             </div>
 
@@ -55,7 +56,7 @@ const UserDashboard = () => {
                     onClick={() => toggleMenu('basket')}
                     className={openMenu === 'basket' ? 'active' : ''}
                 >
-                <img src={openMenu === 'basket' ? BasketWhite : Basket} alt="Basket" /> Basket
+                    <img src={openMenu === 'basket' ? BasketWhite : Basket} alt="Basket" /> Basket
                 </Link>
 
                 {/* Watchlist Submenu */}
@@ -64,7 +65,7 @@ const UserDashboard = () => {
                     onClick={() => toggleMenu('watchlist')}
                     className={openMenu === 'watchlist' ? 'active' : ''}
                 >
-                <img src={openMenu === 'watchlist' ? HeartWhite : Heart} alt="Watchlist" /> Watchlist
+                    <img src={openMenu === 'watchlist' ? HeartWhite : Heart} alt="Watchlist" /> Watchlist
                 </Link>
 
                 {/* Selling Submenu */}
@@ -73,7 +74,7 @@ const UserDashboard = () => {
                     onClick={() => toggleMenu('selling')}
                     className={openMenu === 'selling' ? 'active' : ''}
                     >
-                <img src={openMenu === 'selling' ? SellWhite : Sell} alt="Selling" /> Selling
+                    <img src={openMenu === 'selling' ? SellWhite : Sell} alt="Selling" /> Selling
                 </Link>
             </div>
 
@@ -85,12 +86,16 @@ const UserDashboard = () => {
             )}
             {openMenu === 'watchlist' && (
                 <div className="submenu-content">
-                <p>You have no items in your watchlist.</p>
-                </div> 
+                    <p>You have no items in your watchlist.</p>
+                </div>
             )}
             {openMenu === 'selling' && (
                 <div className="submenu-content">
-                <p>You are not currently selling any items.</p>
+                    <p>You are not currently selling any items.</p>
+                    <Link to="../add-product" className="sellNewBtn">
+                        <img src={Plus} alt="Selling" />
+                        Add a New Listing.
+                    </Link>
                 </div>
             )}
             </div>
