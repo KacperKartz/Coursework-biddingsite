@@ -4,7 +4,7 @@ import BasketProduct from './BasketItem';
 
 const BasketComponenet = ({user}) => {
     const [basketItems, setBasketItems] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     useEffect(() => {
         const fetchBasketItems = async () => {

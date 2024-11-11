@@ -11,10 +11,10 @@ const productController = {
   }, 
 
   async addProduct(req, res) {
-    const { title, description, price, image, category, bidTimer} = req.body;
+    const { title, description, price, image, category, bidding_end_date, userId} = req.body;
 
     try {
-      const newProduct = await Products.addProduct({ title, description, price, image, category, bidTimer });
+      const newProduct = await Products.addProduct({ title, description, price, image, category, bidding_end_date, userId });
       res.status(201).json(newProduct);
     } catch (err) {
       console.error(err);
@@ -48,6 +48,23 @@ const productController = {
         console.error("Error fetching product reviews:", error);
         res.status(500).json({ error: "Failed to fetch product reviews" });
     }
+},
+
+async getSellingProducts(req, res) {
+  const userId = req.params.userId;
+
+  try {
+    const result = await Products.retrieveSellingProducts(userId); 
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ message: 'No products found for this user' });
+    }
+
+    res.status(200).json(result.rows);
+  } catch (error) {
+    console.error('Error retrieving products:', error);
+    res.status(500).json({ error: 'Failed to retrieve products' });
+  }
 },
 
 

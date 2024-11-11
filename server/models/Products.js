@@ -8,15 +8,16 @@ const Products = {
 
 
   async addProduct(data) {
-    const { title, description, price, image, category, bidTimer, userId } = data;
+    const { title, description, price, image, category, bidding_end_date, userId } = data;
   
     const result = await db.query(
       'INSERT INTO products (title, description, price, category, image, bidding_end_date, seller_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
-      [title, description, price, category, image, bidTimer, userId]
+      [title, description, price, category, image, bidding_end_date, userId]
     );
   
     return result.rows[0];
   },
+
   async getProductById(productId) {
     return await db.query('SELECT * FROM products WHERE id = $1', [productId]);
   },
@@ -41,8 +42,12 @@ const Products = {
     `;
     const values = [userId, productId, rating, comment];
     return db.query(query, values);
-  }
+  },
 
+  async retrieveSellingProducts(userId){
+    return await db.query(
+    'SELECT * FROM products WHERE seller_id = $1', [userId]);
+}
 };
 
 

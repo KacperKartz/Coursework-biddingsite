@@ -14,10 +14,11 @@ const AddProductForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
-
+    
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
     data.userId = userId;
+    console.log(data);
     const apiUrl = `${import.meta.env.VITE_APP_BACKEND_API}/api/addProduct`;
 
     try {
