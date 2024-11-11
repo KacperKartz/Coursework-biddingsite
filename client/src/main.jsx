@@ -7,7 +7,7 @@ import { router } from './router.jsx';
 import { Provider} from "react-redux"
 import { Auth0Provider } from "@auth0/auth0-react"
 import { store } from './store/store.js';
-
+import { ToastContainer } from 'react-toastify';
 
 
 createRoot(document.getElementById('root')).render(
@@ -19,6 +19,7 @@ createRoot(document.getElementById('root')).render(
       <Provider store={store}>
         <RouterProvider router={router}></RouterProvider>
       </Provider>
+      <ToastContainer></ToastContainer>
     </Auth0Provider>
 
 )

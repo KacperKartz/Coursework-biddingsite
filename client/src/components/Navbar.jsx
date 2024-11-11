@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/AuctoLogoLarge.svg';
 import chevron from '../assets/chevronBlack.svg';
@@ -11,11 +11,16 @@ import UserContainer from './UserContainer';
 import UserProfilePicture from './UserProfilePicture';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../store/appUserSlice';
-import { useState } from 'react';
+import searchBar from "./SearchBar"
+import SearchBar from './SearchBar';
+import axios from 'axios';
+
+
 
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [data, setData] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -24,6 +29,21 @@ const Navbar = () => {
 
   const user = useSelector((state) =>state.appUser.user)
   const location = useLocation
+
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_APP_BACKEND_API}/api/products`)
+      .then(response => {
+        setData(response.data); 
+        setLoading(false); 
+      })
+      .catch(error => {
+        console.error(error);
+        setError(error); 
+        setLoading(false); 
+      });
+  }, []);
+
+
 
   const navigateLogin = () => {
     closeMenu()
@@ -77,12 +97,7 @@ const Navbar = () => {
                     </Link>
                 </li>
             </ul>
-            <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" className="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search"/>
-                <button>
-                    <img src={ search } rel='search icon'/>
-                </button>
-            </form>
+            <SearchBar listings={data}></SearchBar>
             <div>
 
                     {user? (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 function WebSocketComponent({ productID }) {
   const [auctionState, setAuctionState] = useState({ highestBid: 0, highestBidder: null });
@@ -20,15 +21,22 @@ function WebSocketComponent({ productID }) {
 
     socketRef.current.onmessage = (event) => {
       const updatedAuctionState = JSON.parse(event.data);
-      console.log("Auction Update:", updatedAuctionState);
 
-      setAuctionState({
-        highestBid: updatedAuctionState.highestBid,
-        highestBidder: updatedAuctionState.highestBidder || 'No bids yet.',
-      });
+      if (updatedAuctionState.auctionEnded) {
+        // Notify the winner that they have indeed won. Also notify the losers about the winner
+        if (user && updatedAuctionState.winner === user.username) {
+          toast.success(`Congratulations! You won the auction with a bid of £${updatedAuctionState.highestBid}`);
+        } else {
+          toast.info(`Auction ended! Winner: ${updatedAuctionState.winner} with a bid of £${updatedAuctionState.highestBid}`);
+        }
+      } else {
+        setAuctionState({
+          highestBid: updatedAuctionState.highestBid,
+          highestBidder: updatedAuctionState.highestBidder || 'No bids yet.',
+        });
 
-      // Automatically set newBid to something (2 in this case) above the current highestBid
-      setNewBid(updatedAuctionState.highestBid + 2);
+        setNewBid(updatedAuctionState.highestBid + 2);
+      }
     };
 
     socketRef.current.onclose = () => {
@@ -48,12 +56,12 @@ function WebSocketComponent({ productID }) {
 
   const placeBid = () => {
     if (!user || !user.username) {
-      alert('User not available. Please log in to place a bid.');
+      toast.warning("You must be logged in to bid.");
       return;
     }
 
     if (auctionState.highestBidder === user.username) {
-      alert('You are already the highest bidder.');
+      toast.info("You are already the highest bidder.");
       return;
     }
 
@@ -65,6 +73,7 @@ function WebSocketComponent({ productID }) {
 
       socketRef.current.send(JSON.stringify(bidData));
       console.log('Bid placed:', bidData);
+      toast.success("Bid placed successfully!");
     } else {
       console.log('WebSocket is not open');
     }
