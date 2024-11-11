@@ -24,7 +24,7 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
-      setIsOpen(!isOpen);  // Toggle between true/false
+      setIsOpen(!isOpen); 
     };
 
   const user = useSelector((state) =>state.appUser.user)
@@ -79,22 +79,20 @@ const Navbar = () => {
             </a>
             <ul>
                 <li>
-                    <Link to="/" onClick={closeMenu}>
+                    <NavLink to="/" onClick={closeMenu}>
                         <p>Home</p>
-                        <img src={chevron} rel='chevron' />
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="/shop" onClick={closeMenu}>
+                    <NavLink to="/shop" onClick={closeMenu}>
                         <p>Shop</p>
                         <img src={chevron} rel='chevron' />
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to="#" onClick={closeMenu}>
+                    <NavLink to="/faq" onClick={closeMenu}>
                         <p>FAQ</p>
-                        <img src={chevron} rel='chevron' />
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
             <SearchBar listings={data}></SearchBar>
@@ -118,12 +116,12 @@ const Navbar = () => {
                         <p>Login</p>                        
                     </button>
                     )}
-                <a href="#">
+                <Link to="/user-dashboard?menu=watchlist">
                     <img src={ favourites } rel='chevron' />
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="/user-dashboard?menu=basket">
                     <img src={ basket } rel='chevron' />
-                </a>
+                </Link>
             </div>
         </div>
     </header>

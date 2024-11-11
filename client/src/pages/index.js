@@ -8,3 +8,4 @@ export {default as WStest} from "./WStest"
 export {default as addProductPage} from "./AddProductPage" 
 
 export {default as ShopPage} from "./ShopPage" 
+export {default as FAWPage} from "./FAQPage" 

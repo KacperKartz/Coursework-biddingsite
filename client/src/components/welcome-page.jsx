@@ -3,7 +3,7 @@ import arrow from '../assets/Arrow.svg';
 import CountdownTimer from './CountdownTimer';
 import { Link } from 'react-router-dom';
 
-const targetDate = '2024-11-12T15:00:00';
+const targetDate = '2024-12-01T00:00:00';
 
 const WelcomePage = () =>{
     return (
@@ -18,7 +18,7 @@ const WelcomePage = () =>{
                     <h5>NEW DEALS</h5>
                     <div className="horizontal-bar bar-black"></div>
         
-                    <h2>10% off in<br/>November</h2>
+                    <h2>20% off in<br/>November</h2>
     
                     <Link className='shopNowButton' to='/shop'>
                         <p>Shop now</p>

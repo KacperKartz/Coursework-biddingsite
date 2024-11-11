@@ -549,6 +549,7 @@ header{
 .navbar-container > a{
   gap: 10px;
 }
+
 .navbar-container > a > h1{
   font-size: 32px;
   letter-spacing: 2px;
@@ -572,7 +573,7 @@ header{
   color: black;
 }
 
-.navbar-container > ul > li > .activeLink{
+.navbar-container > ul > li > a.active{
   color: #FF750B;
 }
 
@@ -1139,27 +1140,41 @@ footer{
   margin-right: 10px;
 }
 
-.submenu-links{
+.submenu-links {
   padding: 30px;
-  grid-row-start: 2;
-  grid-column-start: 1;
+  grid-row: 2 / 3;       
+  grid-column: 1 / 2;    
   display: flex;
   flex-direction: column;
   border-right: 1px solid #afafaf;
-  height: 890px;
+  height: 100%;
 }
-.submenu-links > a{
+
+.submenu-links > a {
   display: flex;
   margin-top: 20px;
   align-items: center;
   color: #383838;
   font-weight: 600;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 5px;
 }
 
-.submenu-links > a > img{
+.submenu-links > a > img {
   margin-right: 10px;
 }
 
+.submenu-content {
+  grid-column: 2 / 3; 
+  grid-row: 2 / 3;    
+  padding: 30px;
+}
+
+.submenu-links > a.active{
+  background-color: #FF750B;
+  color: white;
+}
 
 
 /*------------------------[ Media Queries ]------------------------*/
