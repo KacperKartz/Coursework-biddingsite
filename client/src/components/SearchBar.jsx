@@ -34,7 +34,7 @@ const ListingSearch = ({ listings }) => {
         <input
           type="search"
           className="form-control search-input"
-          placeholder="Search listings..."
+          placeholder="Search our collection..."
           aria-label="Search"
           value={searchQuery}
           onChange={handleSearchChange}

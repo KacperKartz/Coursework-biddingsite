@@ -618,6 +618,9 @@ header{
   align-items: center;
   margin: 0;
 }
+.logout-button{
+  cursor: pointer
+}
 .logout-button > img{
   margin-right: 5px;
   transform: rotate(180deg);

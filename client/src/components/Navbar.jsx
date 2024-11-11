@@ -107,16 +107,18 @@ const Navbar = () => {
             <div>
 
                     {user? (
+                      <>
                         <Link to='/user-dashboard' onClick={closeMenu}>
-                            <UserProfilePicture />
-                            <p>Hi {user.username}!</p>
-                            <a onClick={logout} className="logout-button">
-                                <img src={login}></img>  
-                                <p>
-                                    Logout
-                                </p>  
-                            </a>
+                          <UserProfilePicture />
+                          <p>Hi {user.username}!</p>
                         </Link>
+                        <a onClick={logout} className="logout-button">
+                            <img src={login}></img>  
+                            <p>
+                                Logout
+                            </p>  
+                        </a>
+                      </>
                     ):
                     (        
                     <button className='login-btn' type="button" onClick={navigateLogin}>
