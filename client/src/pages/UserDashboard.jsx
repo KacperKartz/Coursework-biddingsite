@@ -92,12 +92,11 @@ const UserDashboard = () => {
             )}
             {openMenu === 'selling' && (
                 <div className="submenu-content">
+                    <SellingItems user={userId}></SellingItems>
                     <Link to="../add-product" className="sellNewBtn">
                         <img src={Plus} alt="Selling" />
                         Add a New Listing
                     </Link>
-
-                    <SellingItems user={userId}></SellingItems>
                 </div>
             )}
             </div>

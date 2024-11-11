@@ -25,8 +25,6 @@ const SellingItems = ({user}) => {
           fetchSellingItems();
         }, []);
 
-        if (loading) return <p>Loading selling items...</p>;
-        if (error) return <p>{error}</p>;
     
   return (
     <div> <h2>Your items</h2>
@@ -43,7 +41,7 @@ const SellingItems = ({user}) => {
         />
       ))
     ) : (
-      <p>Your basket is empty.</p>
+      <p>You are not selling any items at the moment.</p>
     )}</div>
   )
 }
