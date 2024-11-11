@@ -21,6 +21,46 @@ a:hover{
   cursor: pointer;
 }
 
+/* 
+
+BASKET
+*/
+.basket-product {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.basket-product-image {
+  width: 100px;
+  height: auto;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+.basket-product-details {
+  flex: 1;
+}
+
+.basket-product-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.basket-product-description {
+  margin: 0 0 0.5rem;
+  color: #666;
+}
+
+.basket-product-price,
+.basket-product-quantity,
+.basket-product-total {
+  margin: 0.3rem 0;
+} 
 
 /* 
 ReviewComponent.css 

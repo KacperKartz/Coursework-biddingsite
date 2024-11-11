@@ -11,7 +11,6 @@ import UserContainer from './UserContainer';
 import UserProfilePicture from './UserProfilePicture';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../store/appUserSlice';
-import searchBar from "./SearchBar"
 import SearchBar from './SearchBar';
 import axios from 'axios';
 

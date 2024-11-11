@@ -10,23 +10,23 @@ const initialState= {
 
 const appUserSlice = createSlice({
   name: "appUser",
-  initialState
-,
+  initialState,
   reducers: {
     loginUser: (state, action) => {
-      console.log(action);
-      const user = {...action.payload.user, token: action.payload.jwt }
+      const user = {
+        ...action.payload.user,
+        token: action.payload.jwt
+      };
       state.user = user;
-      localStorage.setItem("appUser", JSON.stringify(user))
+      localStorage.setItem("appUser", JSON.stringify(user));
     },
     logoutUser: (state) => {
       state.user = null;
-      console.log("logout")
-      localStorage.removeItem("appUser")
-      
+      localStorage.removeItem("appUser");
     },
   },
 });
+
 
 export const { loginUser, logoutUser } = appUserSlice.actions;
 
