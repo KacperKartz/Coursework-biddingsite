@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
         <BackToTopButton />
         <FooterMenu />
       </main>
-      
     </div>
   );
 };

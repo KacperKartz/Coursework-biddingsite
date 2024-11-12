@@ -5,6 +5,7 @@ import RatingMui from '@mui/material/Rating';
 import AuctionComponent from "./WStest"
 import ReviewComponent from '../components/Review';
 import { useSelector } from 'react-redux';
+import AuctionEndTimer from '../components/AuctionEndTimer';
 
 
 const ProductPage = () => {
@@ -28,6 +29,7 @@ const ProductPage = () => {
     };
 
     fetchProduct();
+    window.scrollTo(0, 0);
   }, [productId]);
 
 
@@ -50,7 +52,10 @@ const ProductPage = () => {
               <RatingMui name="read-only" value={product.rating_rate} readOnly />
               <p>( {product.rating_rate} / 5 )</p>
             </div>
+            <div>
             <h3>£{product.price}</h3>
+            <AuctionEndTimer targetDate={product.bidding_end_date} />
+            </div>
             <hr />
             <br />
             <p>{product.description}</p>
