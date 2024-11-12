@@ -17,7 +17,7 @@ import {action as loginAction} from "./pages/LoginPage"
 import { store } from "./store/store";
 import AddProductPage from "./pages/AddProductPage";
 import UserDashboard from "./pages/UserDashboard";
-import FAQPage from "./components/FAQPage";
+
 
 export const router = createBrowserRouter([
     {
