@@ -6,6 +6,7 @@ import AuctionComponent from "./WStest"
 import ReviewComponent from '../components/Review';
 import { useSelector } from 'react-redux';
 import AuctionEndTimer from '../components/AuctionEndTimer';
+import BuyNowBtn from '../components/BuyNowBtn';
 
 
 const ProductPage = () => {
@@ -15,6 +16,7 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
 
   const userId = useSelector((state) => state.appUser.user?.userId);
+
   
   useEffect(() => {
     const fetchProduct = async () => {
@@ -33,10 +35,11 @@ const ProductPage = () => {
   }, [productId]);
 
 
+
   if (loading) return <div className="product-page-container">Loading...</div>;
   if (error) return <div className="product-page-container">Error: {error.message}</div>;
 
-
+console.log(product.price)
 
   return (
     <div className="product-page-container">
@@ -56,6 +59,7 @@ const ProductPage = () => {
             <h3>£{product.price}</h3>
             <AuctionEndTimer targetDate={product.bidding_end_date} />
             </div>
+            <BuyNowBtn productId={productId} productPrice={product.price}></BuyNowBtn>
             <hr />
             <br />
             <p>{product.description}</p>

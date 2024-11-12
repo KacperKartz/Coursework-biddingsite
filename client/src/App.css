@@ -23,6 +23,25 @@ a:hover{
 }
 
 /* 
+Buy now btn
+*/
+
+.buy-now-btn{
+  padding: 10px 15px;
+  border: none;
+  background-color: #fc7237;
+  color: white;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.buy-now-btn:hover{
+  background-color: #007bff;
+}
+
+/* 
 
 BASKET
 */

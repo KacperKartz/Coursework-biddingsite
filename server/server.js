@@ -96,6 +96,16 @@ const getProductPrice = async (productId) => {
     }
   };
 
+  const getProductDate = async (productId) => {
+    try {
+      const response = await axios.get(`${api}api/products/${productId}`);
+      return new Date(response.data.bidding_end_date).getTime(); 
+    } catch (error) {
+      console.error(`Failed to fetch product end date for product ${productId}:`, error);
+      return null;
+    }
+  };
+
   /// Had to make an auciton initializer 
   const initializeAuction = async (productId) => {
     if (auctions[productId]) {
@@ -104,20 +114,24 @@ const getProductPrice = async (productId) => {
     }
   
     try {
+      const productData = await getProductDate(productId);
       const priceValue = await getProductPrice(productId);
       const startingBid = priceValue * 0.25;
+      const auctionEndTime = productData
     
       console.log(`Starting bid for product ${productId}:`, startingBid);
+      const remainingTime = auctionEndTime - Date.now();
   
 
       auctions[productId] = {
         highestBid: startingBid.toFixed(2),
         highestBidder: null,
-        auctionEnds: Date.now() + 6000, // auction timer - in a real case it would use db which is set up with auction endings but for demo purposes this is 6sec
+        auctionEnds: remainingTime
+        //auctionEnds: Date.now() + 6000, // auction timer - in a real case it would use db which is set up with auction endings but for demo purposes this is 6sec
       };
   
-
-      setTimeout(() => finalizeAuction(productId), 6000);
+      setTimeout(() => finalizeAuction(productId), remainingTime);
+     // setTimeout(() => finalizeAuction(productId), 6000);
   
       return auctions[productId];
     } catch (error) {

@@ -4,18 +4,18 @@ import Basket from "../assets/Basket.svg";
 import Heart from "../assets/Favourites.svg";
 import Sell from "../assets/sell.svg";
 import MinSubMenu from "../assets/minimise-submenu.svg";
-import FAQ from "../assets/FAQ.svg";
+
 import BasketWhite from "../assets/Basket-white.svg";
 import HeartWhite from "../assets/Favourites-white.svg";
 import SellWhite from "../assets/sell-white.svg";
-import FAQWhite from "../assets/FAQ-white.svg";
+
 
 import BasketComponenet from "../components/BasketComponenet";
 import Plus from "../assets/Plus.svg";
 import SellingItems from "../components/SellingItems";
-import FAQPage from "../components/FAQPage";
+
 import { useSelector } from 'react-redux';
-import Watchlist from "../components/Watchlist";
+
 
 
 const UserDashboard = () => {
@@ -84,13 +84,13 @@ const UserDashboard = () => {
                 </Link>
 
                 {/* FAQ Submenu */}
-                <Link 
+                {/* <Link 
                     to="#" 
                     onClick={() => toggleMenu('FAQ')}
                     className={openMenu === 'FAQ' ? 'active' : ''}
                     >
                     <img src={openMenu === 'FAQ' ? FAQWhite : FAQ} alt="Selling" /> FAQ
-                </Link>
+                </Link> */}
             </div>
 
             {/* Render submenu content in the main area based on openMenu state */}

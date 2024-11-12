@@ -88,7 +88,17 @@ async createProductReview(req, res) {
       console.error("Error creating product review:", error);
       res.status(500).json({ error: "Failed to create product review" });
   }
-}
+},
+async updateProductRatings(req, res) {
+  try {
+    await Products.updateProductRatings();
+    res.status(200).json({ message: 'Product ratings updated successfully' });
+  } catch (error) {
+    console.error('Error updating product ratings:', error);
+    res.status(500).json({ error: 'Failed to update product ratings' });
+  }
+},
+
 
 
 };

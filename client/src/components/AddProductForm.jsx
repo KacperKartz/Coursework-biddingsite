@@ -9,18 +9,34 @@ const AddProductForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const userId = useSelector((state) => state.appUser.user?.userId);
+  const [errors, setErrors] = useState({});
 
   
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
+
+    
     
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
     data.userId = userId;
     console.log(data);
     const apiUrl = `${import.meta.env.VITE_APP_BACKEND_API}/api/addProduct`;
+    const newErrors = {};
+    if (!data.title) newErrors.title = 'Title is required';
+    if (!data.description) newErrors.description = 'Description is required';
+    if (!data.price) newErrors.price = 'Price is required';
+    if (!data.bidding_end_date) newErrors.bidding_end_date = 'Bidding end date is required';
 
+   if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      setIsSubmitting(false);
+      return;
+    }
+    ///Set validation
+    setErrors({});
+    
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -29,6 +45,8 @@ const AddProductForm = () => {
         },
         body: JSON.stringify(data),
       });
+
+
 
       if (response.ok) {
         navigate('/'); 
@@ -45,16 +63,16 @@ const AddProductForm = () => {
   return (
     <div className="general-form">
       <h4>Add Product</h4>
-      <Form method="POST" onSubmit={handleSubmit}>
+      <Form method="POST" onSubmit={handleSubmit} >
         <label>Title</label>
         <FormInput type="text" name="title" placeholder="Enter product title" />
-
+        {errors.title && <p className="error-message">{errors.title}</p>}
         <label>Description</label>
         <FormInput type="text" name="description" placeholder="Enter product description" />
-
+        {errors.description && <p className="error-message">{errors.description}</p>}
         <label>Price</label>
         <FormInput type="number" name="price" placeholder="Enter product price" />
-
+        {errors.price && <p className="error-message">{errors.price}</p>}
         <label>Image URL</label>
         <FormInput type="text" name="image" placeholder="Enter image URL" />
 
@@ -69,8 +87,8 @@ const AddProductForm = () => {
 
         <label>Bidding End Date</label>
         <FormInput type="datetime-local" name="bidding_end_date" placeholder="Select end date and time" />
-
-        <SubmitButton text="Add Product" isSubmitting={isSubmitting} />
+        {errors.bidding_end_date && <p className="error-message">{errors.bidding_end_date}</p>}
+        <SubmitButton text="Add Product" isSubmitting={false} />
       </Form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
-import Listing from './listing/Listing'
+import BasketItem from './BasketItem';
 
 
 const SellingItems = ({user}) => {
@@ -28,18 +28,16 @@ const SellingItems = ({user}) => {
     
   return (
     <div> <h2>Your items</h2>
-    {sellingItems.length > 0 ? (
-      sellingItems.map(product => (
-        <Listing
-        title={product.title}
-        description={product.description}
-        price={product.price}
-        image={product.image}
-        category={product.category}
-        rating={product.rating_rate} 
-        bidding_end_date={product.bidding_end_date}
-        />
-      ))
+{sellingItems.length > 0 ? (
+  sellingItems.map(product => (
+    <BasketItem
+    key={product.basket_item_id}
+    title={product.product_name}
+    description={product.description}
+    price={parseFloat(product.price)}
+    image={product.image}
+  />
+  ))
     ) : (
       <p>You are not selling any items at the moment.</p>
     )}</div>

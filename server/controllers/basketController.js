@@ -24,7 +24,7 @@ const BasketController = {
 
   async addItem(req, res) {
     const { userId } = req.params;
-    const { productId, quantity } = req.body;
+    const { productId, quantity, price } = req.body;
     try {
       const basketId = await BasketModel.findOrCreateBasket(userId);
       const itemResult = await BasketModel.getItem(basketId, productId);
@@ -33,7 +33,7 @@ const BasketController = {
         const newQuantity = itemResult.rows[0].quantity + quantity;
         await BasketModel.updateItemQuantity(itemResult.rows[0].id, newQuantity);
       } else {
-        await BasketModel.addItem(basketId, productId, quantity);
+        await BasketModel.addItem(basketId, productId, quantity,price);
       }
 
       res.status(200).json({ message: 'Item added to basket' });

@@ -25,13 +25,14 @@ function WebSocketComponent({ productID }) {
       if (updatedAuctionState.auctionEnded) {
         // Notify the winner that they have indeed won. Also notify the losers about the winner
         if (user && updatedAuctionState.winner === user.username) {
+          
           toast.success(`Congratulations! You won the auction with a bid of £${updatedAuctionState.highestBid}`);
         } else {
           toast.info(`Auction ended! Winner: ${updatedAuctionState.winner} with a bid of £${updatedAuctionState.highestBid}`);
         }
       } else {
         setAuctionState({
-          highestBid: updatedAuctionState.highestBid,
+          highestBid: parseFloat(updatedAuctionState.highestBid).toFixed(2),
           highestBidder: updatedAuctionState.highestBidder || 'No bids yet.',
         });
 
@@ -88,9 +89,9 @@ function WebSocketComponent({ productID }) {
       <input
         type="number"
         value={newBid}
-        onChange={(e) => setNewBid(e.target.value)}
-        placeholder={parseFloat(auctionState.highestBid)+2}
-        min={auctionState.highestBid + 1} // Ensures bid is higher than current highest bid
+        onChange={(e) => setNewBid(parseFloat(e.target.value).toFixed(2))}
+        placeholder={(parseFloat(auctionState.highestBid) + 2).toFixed(2)}
+        min={(parseFloat(auctionState.highestBid) + 1).toFixed(2)} // Ensures bid is higher than current highest bid
         disabled={!user} // Disable if user is not available aka not logged in
       />
       <button onClick={placeBid} disabled={!user}>Place Bid</button>

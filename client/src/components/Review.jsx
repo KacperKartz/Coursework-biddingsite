@@ -43,7 +43,7 @@ const ReviewComponent = ({ productId, userId }) => {
     setSubmissionError('');
     setCharacterCount(comment.length);
 
-    if (characterCount < 20){
+    if (characterCount < 10){
       setSubmissionError("Review is too short.");
       setIsSubmitting(false);
       return
@@ -76,6 +76,7 @@ const ReviewComponent = ({ productId, userId }) => {
     } finally {
       setIsSubmitting(false);
     }
+    await axios.post(`${import.meta.env.VITE_APP_BACKEND_API}/api/update-ratings`)
   };
 
   if (loading) {
@@ -134,7 +135,7 @@ const ReviewComponent = ({ productId, userId }) => {
             ></textarea>
           </label>
           <p className='error-message'>
-              {characterCount < 20 ? "Please enter at least 20 Characters" : ""}
+              {characterCount < 10 ? "Please enter at least 10 Characters" : ""}
               {characterCount > 250 ? "Too many characters" : ""}
           </p>
           <p>

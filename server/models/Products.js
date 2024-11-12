@@ -22,6 +22,9 @@ const Products = {
     return await db.query('SELECT * FROM products WHERE id = $1', [productId]);
   },
 
+
+
+
   async getProductReviews(productId) {
     const query = `
       SELECT reviews.rating, reviews.comment, reviews.created_at, users.username
@@ -47,7 +50,29 @@ const Products = {
   async retrieveSellingProducts(userId){
     return await db.query(
     'SELECT * FROM products WHERE seller_id = $1', [userId]);
+},
+async updateProductRatings() {
+  const query = `
+    UPDATE products
+    SET 
+      rating_rate = COALESCE(subquery.rating_rate, 0),
+      rating_count = COALESCE(subquery.rating_count, 0)
+    FROM (
+      SELECT 
+        product_id,
+        COUNT(rating) AS rating_count,
+        AVG(rating) AS rating_rate
+      FROM 
+        reviews
+      GROUP BY 
+        product_id
+    ) AS subquery
+    WHERE products.id = subquery.product_id;
+  `;
+  await db.query(query);
 }
+
+
 };
 
 
