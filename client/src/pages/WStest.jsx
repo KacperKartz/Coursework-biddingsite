@@ -13,7 +13,7 @@ function WebSocketComponent({ productID }) {
   useEffect(() => {
     console.log("Opening WebSocket connection for productID:", productID);
     // Open WebSocket connection for the given product 
-    socketRef.current = new WebSocket(`${VITE_APP_WS_API}?productID=${productID}`);
+    socketRef.current = new WebSocket(`${import.meta.env.VITE_APP_WS_API}?productID=${productID}`);
 
     socketRef.current.onopen = () => {
       console.log("WebSocket connection opened for product:", productID);
