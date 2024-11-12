@@ -45,6 +45,14 @@ const AuctionEndTimer = ({ targetDate }) => {
         // If less than 1 hour, show minutes and seconds
         <p> - {String(timeLeft.minutes)} mins {String(timeLeft.seconds)} secs left</p>
       )}
+      
+      {timeLeft.days < 1 && timeLeft.hours < 1  && timeLeft.minutes < 1 && timeLeft.seconds <1? (
+        <p>Auction has ended</p>
+      ) : (
+        <p> </p>
+      )}
+      
+      
     </div>
   );
 };

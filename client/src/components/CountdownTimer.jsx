@@ -31,6 +31,7 @@ const CountdownTimer = ({ targetDate }) => {
 
   return (
     <div className='countdownTimer'>
+      
       <span><h6 id="timerD">{String(timeLeft.days).padStart(2, '0')}</h6><p>days</p></span>
       <span><h6 id="timerH">{String(timeLeft.hours).padStart(2, '0')}</h6><p>hrs</p></span>
       <span><h6 id="timerM">{String(timeLeft.minutes).padStart(2, '0')}</h6><p>min</p></span>
