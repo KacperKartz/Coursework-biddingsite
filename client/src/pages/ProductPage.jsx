@@ -14,7 +14,6 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
 
   const userId = useSelector((state) => state.appUser.user?.userId);
-
   
   useEffect(() => {
     const fetchProduct = async () => {
