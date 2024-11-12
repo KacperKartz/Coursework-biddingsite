@@ -7,7 +7,7 @@ import MinSubMenu from "../assets/minimise-submenu.svg";
 import FAQ from "../assets/FAQ.svg";
 import BasketWhite from "../assets/Basket-white.svg";
 import HeartWhite from "../assets/Favourites-white.svg";
-import SellWhite from "../assets/sell-white.svg";
+import SellWhite from "../assets/Sell-white.svg";
 import FAQWhite from "../assets/FAQ-white.svg";
 
 import BasketComponenet from "../components/BasketComponenet";
