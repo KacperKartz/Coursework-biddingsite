@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.6",
+    "@mui/material": "^6.1.6",
     "react-toastify": "^10.0.6",
     "toastify": "^2.0.1"
   }

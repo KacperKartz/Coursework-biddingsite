@@ -97,7 +97,7 @@ const Navbar = () => {
                 </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/faq" onClick={closeMenu}>
+                    <NavLink to="/user-dashboard?menu=FAQ" onClick={closeMenu}>
                         <p>FAQ</p>
                     </NavLink>
                 </li>

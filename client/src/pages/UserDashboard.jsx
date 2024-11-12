@@ -4,14 +4,19 @@ import Basket from "../assets/Basket.svg";
 import Heart from "../assets/Favourites.svg";
 import Sell from "../assets/sell.svg";
 import MinSubMenu from "../assets/minimise-submenu.svg";
+import FAQ from "../assets/FAQ.svg";
 import BasketWhite from "../assets/Basket-white.svg";
 import HeartWhite from "../assets/Favourites-white.svg";
 import SellWhite from "../assets/sell-white.svg";
+import FAQWhite from "../assets/FAQ-white.svg";
+
 import BasketComponenet from "../components/BasketComponenet";
 import Plus from "../assets/Plus.svg";
 import SellingItems from "../components/SellingItems";
-
+import FAQPage from "../components/FAQPage";
 import { useSelector } from 'react-redux';
+import Watchlist from "../components/Watchlist";
+
 
 const UserDashboard = () => {
     // State to control which submenu is open
@@ -22,7 +27,7 @@ const UserDashboard = () => {
 
     // Toggle function to show/hide submenus
     const toggleMenu = (menu) => {
-        setOpenMenu(openMenu === menu ? null : menu); // Close if it's open, otherwise open it
+        setOpenMenu(openMenu === menu ? menu : menu); // Close if it's open, otherwise open it
     };
 
     const userId = useSelector((state) => state.appUser.user?.userId);
@@ -77,6 +82,15 @@ const UserDashboard = () => {
                     >
                     <img src={openMenu === 'selling' ? SellWhite : Sell} alt="Selling" /> Selling
                 </Link>
+
+                {/* FAQ Submenu */}
+                <Link 
+                    to="#" 
+                    onClick={() => toggleMenu('FAQ')}
+                    className={openMenu === 'FAQ' ? 'active' : ''}
+                    >
+                    <img src={openMenu === 'FAQ' ? FAQWhite : FAQ} alt="Selling" /> FAQ
+                </Link>
             </div>
 
             {/* Render submenu content in the main area based on openMenu state */}
@@ -87,7 +101,7 @@ const UserDashboard = () => {
             )}
             {openMenu === 'watchlist' && (
                 <div className="submenu-content">
-                    <p>You have no items in your watchlist.</p>
+                    <Watchlist />
                 </div>
             )}
             {openMenu === 'selling' && (
@@ -97,6 +111,11 @@ const UserDashboard = () => {
                         <img src={Plus} alt="Selling" />
                         Add a New Listing
                     </Link>
+                </div>
+            )}
+            {openMenu === 'FAQ' && (
+                <div className="submenu-content">
+                    <FAQPage />
                 </div>
             )}
             </div>
