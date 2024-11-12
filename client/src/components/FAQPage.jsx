@@ -4,13 +4,13 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import LoginFAQ from '../assets/LoginFAQ.png'
+import LoginFAQ from '../assets/loginFAQ.png'
 import LoginFAQ2 from '../assets/LoginFAQ2.png'
 import RegisterFAQ1 from '../assets/RegisterFAQ1.png'
 import RegisterFAQ2 from '../assets/RegisterFAQ2.png'
-import BiddingFAQ from '../assets/BiddingFAQ.png'
-import BiddingFAQ2 from '../assets/BiddingFAQ2.png'
-import BiddingFAQ3 from '../assets/BiddingFAQ3.png'
+import BiddingFAQ from '../assets/biddingFAQ.png'
+import BiddingFAQ2 from '../assets/biddingFAQ2.png'
+import BiddingFAQ3 from '../assets/biddingFAQ3.png'
 
 const FAQPage = () =>{
   const [expanded, setExpanded] = React.useState(false);
