@@ -15,7 +15,7 @@ const ReviewComponent = ({ productId, userId }) => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND_API || 'http://localhost:5000'}/api/products/reviews/${productId}`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND_API}/api/products/reviews/${productId}`);
         setReviews(response.data);
       } catch (err) {
         console.error("Error fetching reviews:", err);

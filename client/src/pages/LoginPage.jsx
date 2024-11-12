@@ -17,7 +17,7 @@ export const action = (store) =>
         }
       });
       console.log(response.data);
-      const userIdResponse = await axios.post(`http://localhost:5000/api/user-by-mail/${response.data.user.email}`);
+      const userIdResponse = await axios.post(`${import.meta.env.VITE_APP_BACKEND_API}/api/user-by-mail/${response.data.user.email}`);
       const userId = userIdResponse.data.userId;
 
       store.dispatch(loginUser({ user: { ...response.data.user, userId } }));
