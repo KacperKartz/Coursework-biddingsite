@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Basket from "../assets/Basket.svg";
 import Heart from "../assets/Favourites.svg";
-import Sell from "../assets/sell.svg";
+import Sell from "../assets/Sell.svg";
 import MinSubMenu from "../assets/minimise-submenu.svg";
 import FAQ from "../assets/FAQ.svg";
 import BasketWhite from "../assets/Basket-white.svg";
